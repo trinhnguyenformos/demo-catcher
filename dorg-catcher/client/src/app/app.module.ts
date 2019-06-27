@@ -9,29 +9,39 @@ import { NavComponent } from './nav/nav.component';
 import { NavService } from './nav/nav.service';
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
-import { PersonComponent } from './person/person.component';
-import { PersonService } from './person/person.service';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { CatcherComponent } from './catcher/catcher.component';
-import { CatcherService } from './catcher/catcher.service';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faBuilding,
+  faCoffee,
+  faFileExport,
+  faInbox, faListUl,
+  faTags,
+  faTools,
+  faUsersCog
+} from '@fortawesome/free-solid-svg-icons';
+import { ManageDomainComponent } from './manage-domain/manage-domain.component';
+
+library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl);
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     IndexComponent,
-    PersonComponent,
-    CatcherComponent
+    SideBarComponent,
+    ManageDomainComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    NgxDatatableModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FontAwesomeModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, NavService, PersonService, CatcherService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, NavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
