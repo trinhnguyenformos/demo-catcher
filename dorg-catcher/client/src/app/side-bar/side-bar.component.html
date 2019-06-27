@@ -1,0 +1,15 @@
+<div class="side-bar">
+  <div>
+    <div class="function" routerLink="" (click)="selectMenu(1)" [ngClass]="{'selected':selected == 1}" placement="right" ngbTooltip="Domain Hit"><a><fa-icon icon="list-ul"></fa-icon></a></div>
+    <div class="function" routerLink="" (click)="selectMenu(2)" [ngClass]="{'selected':selected == 2}" placement="right" ngbTooltip="Inbox"><a><fa-icon icon="inbox" ></fa-icon></a></div>
+    <div class="function" (click)="selectMenu(3)" [ngClass]="{'selected':selected == 3}" placement="right" ngbTooltip="EUI Export History"><a><fa-icon icon="file-export" ></fa-icon></a></div>
+    <div class="function" (click)="selectMenu(4)" [ngClass]="{'selected':selected == 4}" placement="right" ngbTooltip="Usage Track"><a><fa-icon icon="users-cog" ></fa-icon></a></div>
+  </div>
+  <hr>
+  <div>
+    <div class="function" (click)="selectMenu(5)" [ngClass]="{'selected':selected == 5}" placement="right" ngbTooltip="Manage Account Tags"><a><fa-icon icon="tags" ></fa-icon></a></div>
+    <div class="function" routerLink="manage-domain" (click)="selectMenu(6)" [ngClass]="{'selected':selected == 6}" placement="right" ngbTooltip="Manage Domains"><a><fa-icon icon="building" ></fa-icon></a></div>
+    <div class="function" (click)="selectMenu(7)" [ngClass]="{'selected':selected == 7}" placement="right" ngbTooltip="Tools/Settings"><a><fa-icon icon="tools" ></fa-icon></a></div>
+  </div>
+</div>
+
