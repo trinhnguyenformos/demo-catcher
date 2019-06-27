@@ -1,0 +1,81 @@
+
+<div id="content" role="main" class="person-rest-api">
+  <section class="container colset-2-its">
+    <h1>Welcome to Grails</h1>
+    <br>
+    <h2>Persons REST API</h2>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+           <!--  <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr (click)="viewPerSon(person)" *ngFor="let person of persons">
+                        <td>{{person.id}}</td>
+                        <td>{{person.personName}}</td>
+                        <td>{{person.age}}</td>
+                        <td>{{person.gender}}</td>
+                    </tr>
+                </tbody>
+            </table> -->
+            <div>
+                <ngx-datatable
+                   class="material"
+                   [rows]="persons.data"
+                   [columns]="persons.columns"
+                   [sorts]="[{prop: 'personName', dir: 'asc'}]"
+                   [headerHeight]="50"
+                   [footerHeight]="50"
+                   [rowHeight]="'auto'"
+                   [loadingIndicator]="loading"
+                   ></ngx-datatable>
+            </div>
+<ng-template #hdrTpl let-column="column" let-sort="sortFn">
+<div 
+  class="header-sort-span">
+  {{column.name}}
+</div>
+<div class="header-filter-span">
+  <input 
+    type="text" />
+</div>
+
+</ng-template>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <span class="col-md-4">Person Name:</span>
+                <input required="required" type = "text" class = "col-md-8" placeholder = "Person Name" [(ngModel)]="personInfo.personName">
+            </div>
+            <br>
+            <div class="row">
+                <span class="col-md-4">Age: </span>
+                <input type = "number" class = "col-md-8" placeholder = "Age" [(ngModel)]="personInfo.age">
+            </div>
+            <br>
+            <div class="row">
+                <span class="col-md-4">Gender: </span>
+                <select class="col-md-8" [(ngModel)]="personInfo.gender">
+                    <option value=""></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <br>
+            <div class="action-group">
+                <button [hidden]="!isAddAction" class="button" (click)="addPerson()">Add</button>
+                <button [hidden]="isAddAction" class="button" (click)="updatePerson()">Update</button>
+                <button [hidden]="isAddAction" class="button" (click)="deletePerSon(personInfo.id)">Delete</button>
+                <button class="button" (click)="clear()">Clear</button>
+            </div>
+        </div>
+     </div>
+  </section>
+</div>

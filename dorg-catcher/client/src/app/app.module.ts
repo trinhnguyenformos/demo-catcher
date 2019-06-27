@@ -9,21 +9,29 @@ import { NavComponent } from './nav/nav.component';
 import { NavService } from './nav/nav.service';
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
+import { PersonComponent } from './person/person.component';
+import { PersonService } from './person/person.service';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { CatcherComponent } from './catcher/catcher.component';
+import { CatcherService } from './catcher/catcher.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    IndexComponent
+    IndexComponent,
+    PersonComponent,
+    CatcherComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    NgxDatatableModule,
     NgbModule.forRoot()
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, NavService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, NavService, PersonService, CatcherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
