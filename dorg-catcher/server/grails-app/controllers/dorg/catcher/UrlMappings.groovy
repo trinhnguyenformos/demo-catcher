@@ -1,5 +1,7 @@
 package dorg.catcher
 
+import grails.util.Environment
+
 class UrlMappings {
 
     static mappings = {
@@ -20,5 +22,22 @@ class UrlMappings {
 
         "500"(view: '/error')
         "404"(view: '/notFound')
+        
+        get "/persons"(controller:"person", action:"index")
+        post "/persons"(controller:"person", action:"save")
+        get "/persons/$id"(controller:"person", action:"show")
+        put "/persons/$id"(controller:"person", action:"update")
+        delete "/persons/$id"(controller:"person", action:"delete")
+        
+        "/cars"(resources:"car") {
+            "/render"(controller:"homePage", method:"GET")
+            "/brand"(controller:"brand", method:"GET")
+        }
+        
+        get "/phones"(controller:"phone", action:"index")
+        post "/phones"(controller:"phone", action:"save")
+        get "/phones/$id"(controller:"phone", action:"show")
+        put "/phones/$id"(controller:"phone", action:"update")
+        delete "/phones/$id"(controller:"phone", action:"delete")
     }
 }
