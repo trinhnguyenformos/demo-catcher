@@ -1,6 +1,13 @@
 <!--<app-navigation></app-navigation>-->
-<app-top-bar></app-top-bar>
-<app-side-bar></app-side-bar>
+
+<div *ngIf="isLoggedIn">
+  <app-top-bar></app-top-bar>
+  <app-side-bar></app-side-bar>
+</div>
 <main>
   <router-outlet></router-outlet>
 </main>
+
+<div class="overlay-container" *ngIf="isOverlayVisible" data-progress-overlay="">
+  <div class="loader"></div>
+</div>

@@ -28,14 +28,17 @@ import {
   faPenAlt,
   faHistory,
   faEdit,
-  faUserCog
+  faUserCog,
+  faUserAlt,
+  faLock
 } from '@fortawesome/free-solid-svg-icons';
 import { ManageDomainComponent } from './manage-domain/manage-domain.component';
 import { DomainHitsComponent } from './domain-hits/domain-hits.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ActionRenderer } from './domainHit/partial/action-renderer.component';
+import { LoginComponent } from './login/login.component';
 
-library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl, faTag, faPenAlt, faHistory, faEdit, faUserCog);
+library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl, faTag, faPenAlt, faHistory, faEdit, faUserCog, faUserAlt, faLock);
 
 @NgModule({
   declarations: [
@@ -47,7 +50,8 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     ManageDomainComponent,
     DomainHitsComponent,
     TopBarComponent,
-    ActionRenderer
+    ActionRenderer,
+	LoginComponent
   ],
   imports: [
     BrowserModule,

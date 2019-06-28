@@ -1,0 +1,49 @@
+.login-page .card-signup .card-header {
+  width: auto;
+}
+.card-signup .card-header {
+  margin: -40px 20px 15px;
+  padding: 20px 0;
+  width: 100%;
+}
+.card .card-header-primary {
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(172, 234, 114, 0.85);
+  background: linear-gradient(60deg, #ffffff, #eeeeee);
+}
+.card-signup .card-body {
+  padding: 5px 30px 5px 10px;
+}
+.card-footer-btn {
+  padding-bottom: 10px;
+}
+.login-page .input-group {
+  padding-bottom: 7px;
+  margin: 27px 0 0;
+}
+
+.login-page .alert {
+  margin-top: 10px;
+}
+
+.error-message {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+.login-alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.error-message a {
+color: #4f4f4f;
+}
+
+.login-page .discover-text {
+  color: #0d64ac;
+}
+.login-page .org-text {
+  color: #74b33a;
+}
