@@ -17,6 +17,7 @@ import { CatcherService } from './catcher/catcher.service';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { AngularSplitModule } from 'angular-split';
 import {
   faBuilding,
   faCoffee,
@@ -27,6 +28,7 @@ import {
   faUsersCog
 } from '@fortawesome/free-solid-svg-icons';
 import { ManageDomainComponent } from './manage-domain/manage-domain.component';
+import { DomainHitsComponent } from './domain-hits/domain-hits.component';
 
 library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl);
 
@@ -38,7 +40,8 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     PersonComponent,
     CatcherComponent,
     SideBarComponent,
-    ManageDomainComponent
+    ManageDomainComponent,
+    DomainHitsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     AppRoutingModule,
     NgxDatatableModule,
     NgbModule.forRoot(),
+    AngularSplitModule.forRoot(),
     FontAwesomeModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, NavService, PersonService, CatcherService],
