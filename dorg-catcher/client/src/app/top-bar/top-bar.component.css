@@ -1,0 +1,44 @@
+.top_nav {
+  display: inline-block;
+  position: fixed;
+  margin-left: 64px;
+  z-index: 9;
+  width: 100%;
+  float: left;
+  background: #EDEDED;
+  border-bottom: 1px solid #D9DEE4;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.nav_menu {
+  margin-left: 0;
+  position: relative;
+}
+.nav_button {
+  margin-left: 0;
+}
+.title {
+  color: cornflowerblue;
+}
+.functions {
+  display: inline-flex;
+}
+.function {
+  width: 40px;
+  height: 32px;
+  margin: 20px 10px;
+  padding: 3px;
+  border-radius: 4px;
+  color: cornflowerblue;
+}
+.function:hover {
+  background: #b2d1ff;
+}
+
+.function fa-icon {
+  font-size: 18px;
+}
+.selected {
+  background: cornflowerblue;
+  color: white;
+}
