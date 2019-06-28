@@ -23,13 +23,15 @@ import {
   faInbox, faListUl,
   faTags,
   faTools,
-  faUsersCog
+  faUsersCog,
+  faTag,
+  faPenAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { ManageDomainComponent } from './manage-domain/manage-domain.component';
 import { DomainHitsComponent } from './domain-hits/domain-hits.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 
-library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl);
+library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl, faTag, faPenAlt);
 
 @NgModule({
   declarations: [

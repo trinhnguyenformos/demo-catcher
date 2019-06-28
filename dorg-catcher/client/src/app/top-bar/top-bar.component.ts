@@ -12,4 +12,7 @@ export class TopBarComponent implements OnInit {
   ngOnInit() {
   }
 
+  selectMenu(pos: number) {
+
+  }
 }

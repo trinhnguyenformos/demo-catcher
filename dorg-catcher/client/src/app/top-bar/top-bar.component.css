@@ -1,14 +1,14 @@
 .top_nav {
   display: inline-block;
   position: fixed;
-  margin-left: 64px;
+  margin-left: 51px;
   z-index: 9;
   width: 100%;
   float: left;
   background: #EDEDED;
   border-bottom: 1px solid #D9DEE4;
-  margin-bottom: 10px;
-  width: 100%;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 .nav_menu {
   margin-left: 0;
@@ -22,11 +22,12 @@
 }
 .functions {
   display: inline-flex;
+  justify-content: flex-end;
+  right: 90px;
 }
 .function {
   width: 40px;
   height: 32px;
-  margin: 20px 10px;
   padding: 3px;
   border-radius: 4px;
   color: cornflowerblue;
@@ -41,4 +42,16 @@
 .selected {
   background: cornflowerblue;
   color: white;
+}
+.export-option {
+  height: 32px;
+}
+.btn {
+  border: 1px solid cornflowerblue;
+}
+.search-ip {
+  margin-left: 40px !important;
+}
+.filter {
+  margin: 3px;
 }
