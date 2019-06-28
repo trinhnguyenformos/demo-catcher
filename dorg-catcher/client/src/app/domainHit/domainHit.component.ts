@@ -16,66 +16,61 @@ export class DomainHitComponent implements OnInit {
   serverUrl: string;
   domainHits: any = [];
   
-  rows: any[];
-  rowsOrig: any[];
-  gridApi: GridApi;
 
   constructor(private catcherService: CatcherService, private router: Router) { }
 
   ngOnInit(): void {
     this.serverUrl = environment.serverUrl;
-    this.getDomainHitHeader();
-    this.rows = this.domainHits.data;
-    
+    this.initDomainHits();
   }
   
-  getDomainHitHeader() {
-	  this.domainHits.columns = [
-            {headerName: "Company Name", field: "companyName",
-                checkboxSelection: function (params) {
-                 return params.columnApi.getRowGroupColumns().length === 0;
-                },
-                headerCheckboxSelection: function (params) {
-                   return params.columnApi.getRowGroupColumns().length === 0;
-                }, sortable: true, filter: true
+  initDomainHits() {
+     this.domainHits.columns = [
+        {headerName: "Company Name", field: "companyName",
+            checkboxSelection: function (params) {
+             return params.columnApi.getRowGroupColumns().length === 0;
             },
-            { field: 'companyDomain', headerName: 'Company Domain', sortable: true, filter: true},
-            { field: 'firstEmailDate', headerName: 'First Email Date', sortable: true, filter: true},
-            { field: 'lastEmailDate', headerName: 'Last Email Date', sortable: true, filter: true},
-            { field: 'sendCount', headerName: 'Send Count'},
-            { field: 'lastAction', headerName: 'Last Action'},
-            { field: 'clientStatus', headerName: 'Client Status', sortable: true, filter: true},
-            { field: 'grade', headerName: 'Grade', sortable: true, filter: true},
+            headerCheckboxSelection: function (params) {
+               return params.columnApi.getRowGroupColumns().length === 0;
+            }, sortable: true, filter: true
+        },
+        { field: 'companyDomain', headerName: 'Company Domain', sortable: true, filter: true},
+        { field: 'firstEmailDate', headerName: 'First Email Date', sortable: true, filter: true},
+        { field: 'lastEmailDate', headerName: 'Last Email Date', sortable: true, filter: true},
+        { field: 'sendCount', headerName: 'Send Count', sortable: true},
+        { field: 'lastAction', headerName: 'Last Action', sortable: true},
+        { field: 'clientStatus', headerName: 'Client Status', sortable: true, filter: true},
+        { field: 'grade', headerName: 'Grade', sortable: true, filter: true},
       ];
+      
       this.domainHits.gridOptions = {
            pagination: true,
            rowModelType: 'infinite',
            cacheBlockSize: 20,
            paginationPageSize: 5
       };
+      
+      this.domainHits.dataSource = {
+          getRows: (params: IGetRowsParams) => {
+              this.apiService().subscribe(data => {
+                  params.successCallback(data,data.length);
+              })
+          }
+      }
       return this.domainHits;
-  }
-  
-  dataSource: IDatasource = {
-    getRows: (params: IGetRowsParams) => {
-      this.apiService().subscribe(data => {
-        params.successCallback(
-          data,
-          data.length
-        );
-      })
-    }
-  }
+   }
   
   apiService() {
     return this.catcherService.getDomaintHitData();
   }
   
   onGridReady(params: any) {
-    this.gridApi = params.api;
-    this.gridApi.sizeColumnsToFit();
-    this.gridApi.setDatasource(this.dataSource)
+    this.domainHits.gridApi = params.api;
+    this.domainHits.gridApi.sizeColumnsToFit();
+    this.domainHits.gridApi.setDatasource(this.domainHits.dataSource);
   }
+  
+  
   
 }
 
