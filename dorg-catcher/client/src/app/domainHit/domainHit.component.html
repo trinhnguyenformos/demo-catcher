@@ -1,18 +1,16 @@
 
 <div id="content" role="main" class="person-rest-api">
-  <br>
-  <br>
-  <br>
+  <div class="top-cover"></div>
   <div class="domain-hit">
-    <ag-grid-angular 
+     <ag-grid-angular 
         class="ag-theme-balham"
-        [rowData]="domainHits.data" 
-        [columnDefs]="domainHits.columns"
         rowSelection="multiple"
         [gridOptions]="domainHits.gridOptions"
         (gridReady)="onGridReady($event)"
         [frameworkComponents]="domainHits.frameworkComponents"
+        (rowClicked)="onRowClicked($event)"
+        (filterChanged)="onFilterChanged($event)"
         >
-    </ag-grid-angular>
-    </div>
+     </ag-grid-angular>
+  </div>
 </div>

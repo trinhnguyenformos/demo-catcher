@@ -1,5 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 /* NAVIGATION MENU */
+.ag-floating-filter-button .ag-icon.ag-icon-filter {
+    display: none;
+}
+
+.ag-floating-filter-body .ag-input-text-wrapper input.ag-filter-filter,
+.ag-floating-filter-body .ag-input-text-wrapper input.ag-floating-filter-input {
+    border: none !important;
+    background-color: white;
+}
 
 .nav {
     zoom: 1;

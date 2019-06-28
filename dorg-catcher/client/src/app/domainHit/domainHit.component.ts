@@ -26,30 +26,36 @@ export class DomainHitComponent implements OnInit {
   }
   
   initDomainHits() {
-     this.domainHits.columns = [
+     var columnDefs = [
         {headerName: "Company Name", field: "companyName",
             checkboxSelection: function (params) {
              return params.columnApi.getRowGroupColumns().length === 0;
             },
             headerCheckboxSelection: function (params) {
                return params.columnApi.getRowGroupColumns().length === 0;
-            }, sortable: true, filter: true
+            }, sortable: true, filter: 'agTextColumnFilter'
         },
-        { field: 'companyDomain', headerName: 'Company Domain', sortable: true, filter: true},
-        { field: 'firstEmailDate', headerName: 'First Email Date', sortable: true, filter: true},
-        { field: 'lastEmailDate', headerName: 'Last Email Date', sortable: true, filter: true},
-        { field: 'sendCount', headerName: 'Send Count', sortable: true},
-        { field: 'lastAction', headerName: 'Last Action', sortable: true},
-        { field: 'clientStatus', headerName: 'Client Status', sortable: true, filter: true},
-        { field: 'grade', headerName: 'Grade', sortable: true, filter: true},
-        { headerName: "Action", cellRenderer: "actionRenderer"}
+        { field: 'companyDomain', headerName: 'Company Domain', sortable: true, filter: 'agTextColumnFilter'},
+        { field: 'firstEmailDate', headerName: 'First Email Date', sortable: true, filter: 'agDateColumnFilter'},
+        { field: 'lastEmailDate', headerName: 'Last Email Date', sortable: true, filter: 'agDateColumnFilter'},
+        { field: 'sendCount', headerName: 'Send Count', sortable: true, filter: false},
+        { field: 'lastAction', headerName: 'Last Action', sortable: true, filter: false},
+        { field: 'clientStatus', headerName: 'Client Status', sortable: true, filter: 'agTextColumnFilter'},
+        { field: 'grade', headerName: 'Grade', sortable: true, filter: 'agTextColumnFilter'},
+        { headerName: "Action", cellRenderer: "actionRenderer", filter: false}
       ];
       
       this.domainHits.gridOptions = {
+           defaultColDef: {
+                resizable: true,
+                filter: false
+           },
+           columnDefs: columnDefs,
            pagination: true,
            rowModelType: 'infinite',
            cacheBlockSize: 20,
-           paginationPageSize: 5
+           paginationPageSize: 5,
+           floatingFilter:true
       };
       
       this.domainHits.frameworkComponents = {
@@ -74,7 +80,17 @@ export class DomainHitComponent implements OnInit {
     this.domainHits.gridApi = params.api;
     this.domainHits.gridApi.sizeColumnsToFit();
     this.domainHits.gridApi.setDatasource(this.domainHits.dataSource);
+    this.domainHits.gridApi.setDomLayout('autoHeight');
   }
-
+  
+  onRowClicked(params: any) {
+      alert("onRowClicked");
+      console.log(params);
+  }
+  
+  onFilterChanged(params: any) {
+      alert("onFilterChanged");
+      console.log(params);
+  }
 }
 
