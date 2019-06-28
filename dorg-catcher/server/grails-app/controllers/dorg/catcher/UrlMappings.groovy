@@ -39,5 +39,7 @@ class UrlMappings {
         get "/phones/$id"(controller:"phone", action:"show")
         put "/phones/$id"(controller:"phone", action:"update")
         delete "/phones/$id"(controller:"phone", action:"delete")
+        
+        post "/catcher"(controller:"catcher", action:"getDomainHits")
     }
 }
