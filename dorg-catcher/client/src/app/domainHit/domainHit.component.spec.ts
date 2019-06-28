@@ -1,24 +1,24 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { PersonComponent } from './person.component';
+import { DomainHitComponent } from './domainHit.component';
 import { Observable, Observer } from 'rxjs';
 import { APP_BASE_HREF } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Routes } from '@angular/router';
-import { PersonService } from './person.service';
+import { CatcherService } from '../catcher/catcher.service';
 
-describe('Component: Person', () => {
+describe('Component: DomainHit', () => {
 
   const rootRouterConfig: Routes = [
-    {path: '', redirectTo: 'person', pathMatch: 'full'},
-    {path: 'person', component: PersonComponent}
+    {path: '', redirectTo: 'domainHit', pathMatch: 'full'},
+    {path: 'domainHit', component: DomainHitComponent}
   ];
 
-  let component: PersonComponent;
+  let component: DomainHitComponent;
 
-  const personService = {
-    getPersonsData: () => {
+  const catcherService = {
+    getDomaintHitData: () => {
       return Observable.create((observer: Observer<any>) => {
         observer.next({controllers: [{name: 'b'}, {name: 'a'}]});
         observer.complete();
@@ -29,18 +29,18 @@ describe('Component: Person', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        PersonComponent
+          DomainHitComponent
       ],
       imports: [
         RouterTestingModule.withRoutes(rootRouterConfig)
       ],
       providers: [
-        {provide: PersonService, useValue: personService},
+        {provide: CatcherService, useValue: catcherService},
         {provide: APP_BASE_HREF, useValue: '/'},
       ],
     });
 
-    let fixture = TestBed.createComponent(PersonComponent);
+    let fixture = TestBed.createComponent(DomainHitComponent);
     component = fixture.debugElement.componentInstance;
   });
 
@@ -56,7 +56,7 @@ describe('Component: Person', () => {
   });
 
   it('should determine if a route exists based on path', () => {
-    expect(component.hasRoute('person')).toBe(true);
+    expect(component.hasRoute('domainHit')).toBe(true);
     expect(component.hasRoute('grails-angular')).toBe(false);
   });
 

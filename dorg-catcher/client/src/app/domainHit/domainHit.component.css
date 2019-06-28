@@ -1,0 +1,17 @@
+.domain-hit {
+    width: 90%;
+    margin-left: 70px;
+}
+
+.domain-hit .ag-theme-balham {
+    height: 400px;
+}
+
+.ag-theme-balham .ag-root-wrapper-body {
+    height: auto;
+}
+
+
+.ag-theme-balham .ag-root-wrapper-body .ag-layout-normal {
+  height: auto !important;
+}

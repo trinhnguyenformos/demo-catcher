@@ -7,15 +7,13 @@ import { IndexComponent } from './index/index.component';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { NavService } from './nav/nav.service';
-import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
-import { PersonComponent } from './person/person.component';
-import { PersonService } from './person/person.service';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { CatcherComponent } from './catcher/catcher.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { HttpClientModule } from "@angular/common/http";
 import { CatcherService } from './catcher/catcher.service';
+import { DomainHitComponent} from "./domainHit/domainHit.component";
+import { AgGridModule} from "ag-grid-angular/main";
 import { SideBarComponent } from './side-bar/side-bar.component';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { AngularSplitModule } from 'angular-split';
 import {
@@ -38,24 +36,23 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     AppComponent,
     NavComponent,
     IndexComponent,
-    PersonComponent,
-    CatcherComponent,
+    DomainHitComponent,
     SideBarComponent,
     ManageDomainComponent,
     DomainHitsComponent,
-	TopBarComponent
+    TopBarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    NgxDatatableModule,
     NgbModule.forRoot(),
     AngularSplitModule.forRoot(),
+    AgGridModule,
     FontAwesomeModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, NavService, PersonService, CatcherService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, NavService, CatcherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

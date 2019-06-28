@@ -1,0 +1,17 @@
+
+<div id="content" role="main" class="person-rest-api">
+  <br>
+  <br>
+  <br>
+  <div class="domain-hit">
+    <ag-grid-angular 
+        class="ag-theme-balham"
+        [rowData]="domainHits.data" 
+        [columnDefs]="domainHits.columns"
+        rowSelection="multiple"
+        [gridOptions]="domainHits.gridOptions"
+        (gridReady)="onGridReady($event)"
+        >
+    </ag-grid-angular>
+    </div>
+</div>
