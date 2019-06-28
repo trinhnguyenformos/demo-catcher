@@ -5,6 +5,7 @@ import {Route, Router} from '@angular/router';
 import { GridOptions, IDatasource, IGetRowsParams, GridApi } from 'ag-grid-community';
 
 import { environment } from '../../environments/environment';
+import { ActionRenderer } from './partial/action-renderer.component';
 
 @Component({
   selector: 'app-domainHit',
@@ -41,6 +42,7 @@ export class DomainHitComponent implements OnInit {
         { field: 'lastAction', headerName: 'Last Action', sortable: true},
         { field: 'clientStatus', headerName: 'Client Status', sortable: true, filter: true},
         { field: 'grade', headerName: 'Grade', sortable: true, filter: true},
+        { headerName: "Action", cellRenderer: "actionRenderer"}
       ];
       
       this.domainHits.gridOptions = {
@@ -48,6 +50,10 @@ export class DomainHitComponent implements OnInit {
            rowModelType: 'infinite',
            cacheBlockSize: 20,
            paginationPageSize: 5
+      };
+      
+      this.domainHits.frameworkComponents = {
+          actionRenderer: ActionRenderer
       };
       
       this.domainHits.dataSource = {
@@ -69,8 +75,6 @@ export class DomainHitComponent implements OnInit {
     this.domainHits.gridApi.sizeColumnsToFit();
     this.domainHits.gridApi.setDatasource(this.domainHits.dataSource);
   }
-  
-  
-  
+
 }
 

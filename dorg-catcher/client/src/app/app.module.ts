@@ -30,6 +30,7 @@ import {
 import { ManageDomainComponent } from './manage-domain/manage-domain.component';
 import { DomainHitsComponent } from './domain-hits/domain-hits.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { ActionRenderer } from './domainHit/partial/action-renderer.component';
 
 library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl, faTag, faPenAlt);
 
@@ -42,7 +43,8 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     SideBarComponent,
     ManageDomainComponent,
     DomainHitsComponent,
-    TopBarComponent
+    TopBarComponent,
+    ActionRenderer
   ],
   imports: [
     BrowserModule,
@@ -53,6 +55,9 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     AngularSplitModule.forRoot(),
     AgGridModule,
     FontAwesomeModule
+  ],
+  entryComponents: [
+    ActionRenderer
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, NavService, CatcherService],
   bootstrap: [AppComponent]
