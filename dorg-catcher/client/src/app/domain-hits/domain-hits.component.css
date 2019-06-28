@@ -1,6 +1,7 @@
 .split-example {
   display: flex;
   height: 400px;
+  padding-top: 100px;
 }
 
 .split-example .center {
