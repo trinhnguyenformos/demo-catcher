@@ -26,11 +26,16 @@
   right: 90px;
 }
 .function {
-  width: 40px;
+  width: 32px;
   height: 32px;
   padding: 3px;
   border-radius: 4px;
   color: cornflowerblue;
+}
+.export-func {
+  margin: 0 8px 0 2px;
+  border: 1px solid #ccc;
+  color: #333;
 }
 .function:hover {
   background: #b2d1ff;
