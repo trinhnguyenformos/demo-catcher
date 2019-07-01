@@ -1,0 +1,14 @@
+.form-group > input {
+  float: left;
+  width: 30%;
+  margin-right: 5px;
+}
+
+.action {
+  padding-bottom: 3px;
+}
+
+.close-icon {
+  float: right;
+  margin-right: 10px;
+}

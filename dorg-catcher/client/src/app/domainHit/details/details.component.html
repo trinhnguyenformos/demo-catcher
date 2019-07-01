@@ -1,0 +1,36 @@
+<div class="details">
+  <div class="row action">
+    <div class="col-md-6">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Email History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Download Job</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Usage Track</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">IP Addresses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tags</a>
+        </li>
+      </ul>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Search by sender or IP Addresses" />
+        <input class="form-control" type="date" placeholder="From Date" />
+        <input class="form-control" type="date" placeholder="To Date" />
+      </div>
+    </div>
+    <div class="col-md-6">
+        <fa-icon class="close-icon" [icon]="['fas','times-circle']" (click)="closingPanelDetails()"></fa-icon>
+    </div>
+  </div>
+  <div>
+    <ag-grid-angular class="ag-theme-balham" rowSelection="multiple" [gridOptions]="grid.gridOptions"
+      (gridReady)="onGridReady($event)" [rowData]="grid.data">
+    </ag-grid-angular>
+  </div>
+</div>

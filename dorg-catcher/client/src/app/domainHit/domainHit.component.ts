@@ -16,7 +16,8 @@ export class DomainHitComponent implements OnInit {
 
   serverUrl: string;
   domainHits: any = [];
-  
+  isShowDetails = false;
+
 
   constructor(private catcherService: CatcherService, private router: Router) { }
 
@@ -24,7 +25,7 @@ export class DomainHitComponent implements OnInit {
     this.serverUrl = environment.serverUrl;
     this.initDomainHits();
   }
-  
+
   initDomainHits() {
      var columnDefs = [
         {headerName: "Company Name", field: "companyName",
@@ -44,7 +45,7 @@ export class DomainHitComponent implements OnInit {
         { field: 'grade', headerName: 'Grade', sortable: true, filter: 'agTextColumnFilter'},
         { headerName: "Action", cellRenderer: "actionRenderer", filter: false}
       ];
-      
+
       this.domainHits.gridOptions = {
            defaultColDef: {
                 resizable: true,
@@ -57,11 +58,11 @@ export class DomainHitComponent implements OnInit {
            paginationPageSize: 5,
            floatingFilter:true
       };
-      
+
       this.domainHits.frameworkComponents = {
           actionRenderer: ActionRenderer
       };
-      
+
       this.domainHits.dataSource = {
           getRows: (params: IGetRowsParams) => {
               this.apiService().subscribe(data => {
@@ -71,26 +72,29 @@ export class DomainHitComponent implements OnInit {
       }
       return this.domainHits;
    }
-  
+
   apiService() {
     return this.catcherService.getDomaintHitData();
   }
-  
+
   onGridReady(params: any) {
     this.domainHits.gridApi = params.api;
     this.domainHits.gridApi.sizeColumnsToFit();
     this.domainHits.gridApi.setDatasource(this.domainHits.dataSource);
     this.domainHits.gridApi.setDomLayout('autoHeight');
   }
-  
-  onRowClicked(params: any) {
-      alert("onRowClicked");
-      console.log(params);
-  }
-  
+
   onFilterChanged(params: any) {
       alert("onFilterChanged");
       console.log(params);
+  }
+
+  showDetails(params: any) {
+    this.isShowDetails = true;
+  }
+
+  closeDetails() {
+    this.isShowDetails = false;
   }
 }
 
