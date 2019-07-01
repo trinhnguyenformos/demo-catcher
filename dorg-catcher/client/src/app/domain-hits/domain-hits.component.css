@@ -1,9 +1,17 @@
 .split-example {
   display: flex;
-  height: 400px;
-  padding-top: 100px;
+  height: 700px;
+  padding-top: 300px;
 }
+
+/* .split-example .ag-theme-balham {
+  height: 250px;
+} */
 
 .split-example .center {
   text-align: center;
 }
+
+/* .ag-row-odd {
+  background-color: #d2e0ef;
+} */
