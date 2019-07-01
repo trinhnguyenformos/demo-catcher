@@ -87,8 +87,8 @@ environments:
             #one of 'create', 'create-drop', 'update', 'validate', 'none'
             dbCreate: create-drop
             url: jdbc:mysql://devqamqa-dbcluster-h4nrycbabu7g.cluster-cprnvtezdszn.us-west-2.rds.amazonaws.com/catcher
-            username: l_htruong
-            password: l_htruong
+            username: l_username
+            password: l_username
               #dataSources:
               #internal_dorg:
               #one of 'create', 'create-drop', 'update', 'validate', 'none'
@@ -105,8 +105,8 @@ environments:
             dbCreate: none
             #url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
             url: jdbc:mysql://devqamqa-dbcluster-h4nrycbabu7g.cluster-cprnvtezdszn.us-west-2.rds.amazonaws.com/catcher
-            username: l_htruong
-            password: l_htruong
+            username: l_username
+            password: l_username
             properties:
                 jmxEnabled: true
                 initialSize: 5
