@@ -10,6 +10,14 @@
     background-color: white;
 }
 
+.ag-body-viewport .ag-center-cols-container .ag-row-even {
+  background-color: #a1c9e6;
+}
+
+.ag-body-viewport .ag-center-cols-container .ag-row-hover {
+  background-color: #0a4988;
+}
+
 .nav {
     zoom: 1;
 }
