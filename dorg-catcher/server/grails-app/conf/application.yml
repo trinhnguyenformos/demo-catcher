@@ -75,15 +75,27 @@ hibernate:
 dataSource:
     pooled: true
     jmxExport: true
-    driverClassName: org.h2.Driver
+    #driverClassName: org.h2.Driver
+    driverClassName: com.mysql.jdbc.Driver
+    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     username: sa
     password: ''
 
 environments:
     development:
         dataSource:
+            #one of 'create', 'create-drop', 'update', 'validate', 'none'
             dbCreate: create-drop
-            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:mysql://devqamqa-dbcluster-h4nrycbabu7g.cluster-cprnvtezdszn.us-west-2.rds.amazonaws.com/catcher
+            username: l_htruong
+            password: l_htruong
+              #dataSources:
+              #internal_dorg:
+              #one of 'create', 'create-drop', 'update', 'validate', 'none'
+              #dbCreate: create-drop
+              #url: jdbc:mysql://devqamqa-dbcluster-h4nrycbabu7g.cluster-cprnvtezdszn.us-west-2.rds.amazonaws.com/o_catcher
+              #username: root
+            #password: ''
     test:
         dataSource:
             dbCreate: update
@@ -91,7 +103,10 @@ environments:
     production:
         dataSource:
             dbCreate: none
-            url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            #url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:mysql://devqamqa-dbcluster-h4nrycbabu7g.cluster-cprnvtezdszn.us-west-2.rds.amazonaws.com/catcher
+            username: l_htruong
+            password: l_htruong
             properties:
                 jmxEnabled: true
                 initialSize: 5

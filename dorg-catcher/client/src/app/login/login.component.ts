@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   errorMessage = null;
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
     this.loginService.changeAuth(false);
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
     console.log("login---", this.user);
     if (this.user.login !== null && this.user.password !== null) {
       this.loginService.changeAuth(true);
-      window.location.href = 'http://localhost:4200' + "/#/index";
+      this.router.navigate(['index']);
     } else {
       this.loginService.changeAuth(false);
       this.errorMessage = "Login failed. Please try again or contact <a href=\"mailto:admin@admin.com\">admin@admin.com</a>.";

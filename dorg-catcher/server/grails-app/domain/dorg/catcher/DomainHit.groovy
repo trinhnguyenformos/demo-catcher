@@ -18,5 +18,7 @@ class DomainHit {
         id blank:false
     }
 
-
+    static mapping = {
+        version false
+    }
 }

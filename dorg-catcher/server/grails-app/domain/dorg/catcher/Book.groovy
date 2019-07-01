@@ -13,5 +13,7 @@ class Book {
         title blank:false
     }
 
-
+    static mapping = {
+        version false
+    }
 }
