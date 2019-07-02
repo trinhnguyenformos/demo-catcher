@@ -1,13 +1,13 @@
 <div id="content" role="main" class="person-rest-api">
   <div class="top-cover"></div>
   <as-split useTransition="true" unit="percent" direction="vertical">
-    <as-split-area size="50" order="1" class="center" minSize="20">
+    <as-split-area size="40" order="1" class="center" minSize="20">
       <ag-grid-angular class="ag-theme-balham" rowSelection="multiple" [gridOptions]="domainHits.gridOptions"
         (gridReady)="onGridReady($event)" [frameworkComponents]="domainHits.frameworkComponents"
         (rowClicked)="showDetails($event)" (filterChanged)="onFilterChanged($event)">
       </ag-grid-angular>
     </as-split-area>
-    <as-split-area size="50" minSize="30" order="2" *ngIf="isShowDetails">
+    <as-split-area size="60" minSize="30" order="2" *ngIf="isShowDetails">
       <app-details id="34343" (closeDetails)="closeDetails($event)"></app-details>
     </as-split-area>
   </as-split>

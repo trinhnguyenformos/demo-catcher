@@ -12,3 +12,7 @@
   float: right;
   margin-right: 10px;
 }
+
+.details {
+  height: cal(100% + 32px);
+}
