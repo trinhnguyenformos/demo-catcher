@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     console.log("login---", this.user);
     if (this.user.login !== null && this.user.password !== null) {
       this.loginService.changeAuth(true);
-      this.router.navigate(['index']);
+      this.router.navigate(['domainHit']);
     } else {
       this.loginService.changeAuth(false);
       this.errorMessage = "Login failed. Please try again or contact <a href=\"mailto:admin@admin.com\">admin@admin.com</a>.";

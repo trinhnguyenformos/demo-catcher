@@ -41,5 +41,7 @@ class UrlMappings {
         delete "/phones/$id"(controller:"phone", action:"delete")
         
         post "/catcher"(controller:"catcher", action:"getDomainHits")
+
+        post "/email-sources"(controller:"catcher", action:"getEmailSources")
     }
 }

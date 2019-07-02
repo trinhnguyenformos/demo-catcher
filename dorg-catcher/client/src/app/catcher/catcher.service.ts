@@ -26,4 +26,8 @@ export class CatcherService {
   findCatcherEmailHistoryById(id): Observable<HttpResponse<CatcherEmailHistory>> {
     return this.httpClient.get<CatcherEmailHistory>(environment.serverUrl + 'catcher-email-history/' + id, { observe: 'response' });
   }
+
+  getEmailSources(): Observable<any> {
+    return this.httpClient.post(environment.serverUrl + 'email-sources', '').pipe(publishReplay(), refCount());
+  }
 }

@@ -14,4 +14,10 @@ class CatcherController {
             render DomainHit.findAll() as JSON
         }
     }
+
+    def getEmailSources() {
+        if (request.method == "POST") {
+            render EmailSource.findAll() as JSON
+        }
+    }
 }
