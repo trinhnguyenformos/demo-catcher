@@ -1,0 +1,25 @@
+.domain-hit {
+  width: 95%;
+  margin-left: 70px;
+}
+
+.person-rest-api .top-cover {
+  height: 155px;
+}
+
+.ag-theme-balham .ag-root-wrapper-body {
+  height: auto;
+}
+
+
+.ag-theme-balham .ag-root-wrapper-body .ag-layout-normal {
+height: auto !important;
+}
+.ag-floating-filter-button .ag-icon.ag-icon-filter {
+  display: none;
+}
+
+.ag-floating-filter-body .ag-floating-filter-input {
+  border: none;
+  background-color: white;
+}

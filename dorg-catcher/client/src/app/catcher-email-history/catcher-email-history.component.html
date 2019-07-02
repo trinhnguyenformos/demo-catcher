@@ -1,0 +1,19 @@
+<as-split useTransition="true" unit="percent">
+  <as-split-area size="50" order="1" class="center" [visible]="true" minSize="20">
+    <div>
+      <div id="content" role="main" class="person-rest-api">
+        <div class="top-cover"></div>
+        <div class="domain-hit">
+
+          <ag-grid-angular class="ag-theme-balham" [rowData]="emailHistories.data" [columnDefs]="emailHistories.columns"
+            rowSelection="single" [frameworkComponents]="emailHistories.frameworkComponents"
+            [gridOptions]="emailHistories.gridOptions" (gridReady)="onGridReady($event)">
+          </ag-grid-angular>
+        </div>
+      </div>
+    </div>
+  </as-split-area>
+  <as-split-area size="50" minSize="30" order="2" [visible]="isShowDetails">
+    <app-catcher-email-history-detail [catcherEmailHistoryId]="catcherEmailHistoryId" (closeDetails)="closeDetails($event)"></app-catcher-email-history-detail>
+  </as-split-area>
+</as-split>

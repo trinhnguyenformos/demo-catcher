@@ -39,6 +39,14 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ActionRenderer } from './domainHit/partial/action-renderer.component';
 import { LoginComponent } from './login/login.component';
 import { DetailsComponent } from './domainHit/details/details.component';
+import { CatcherEmailHistoryDetailComponent } from './catcher-email-history/partial/catcher-email-history-detail/catcher-email-history-detail.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EmailHistoryTypeRenderer } from './catcher-email-history/partial/renderer/email-history-type-renderer.component';
+import { CatcherEmailHistoryComponent } from './catcher-email-history/catcher-email-history.component';
+import { IpScanTabComponent } from './catcher-email-history/partial/catcher-email-history-detail/ip-scan-tab/ip-scan-tab.component';
+import { EmailContentTabComponent } from './catcher-email-history/partial/catcher-email-history-detail/email-content-tab/email-content-tab.component';
+import { DetailsTabComponent } from './catcher-email-history/partial/catcher-email-history-detail/details-tab/details-tab.component';
 
 // tslint:disable-next-line:max-line-length
 library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl, faTag, faPenAlt, faHistory, faEdit, faUserCog, faUserAlt, faLock, faTimesCircle);
@@ -55,7 +63,13 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     TopBarComponent,
     ActionRenderer,
     LoginComponent,
-    DetailsComponent
+    EmailHistoryTypeRenderer,
+    CatcherEmailHistoryComponent,
+    CatcherEmailHistoryDetailComponent,
+    DetailsComponent,
+    DetailsTabComponent,
+    EmailContentTabComponent,
+    IpScanTabComponent
   ],
   imports: [
     BrowserModule,
@@ -65,10 +79,13 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     NgbModule.forRoot(),
     AngularSplitModule.forRoot(),
     AgGridModule,
+    MatTabsModule,
+    BrowserAnimationsModule,
     FontAwesomeModule
   ],
   entryComponents: [
-    ActionRenderer
+    ActionRenderer,
+    EmailHistoryTypeRenderer
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, NavService, CatcherService],
   bootstrap: [AppComponent]
