@@ -1,0 +1,39 @@
+.email-hitory-details {
+    background-color: white;
+    font-weight: 400;
+    font-size: 12px;
+    border-left: solid 1px #80808045;
+    border-bottom: solid 1px #80808045;
+    box-shadow: 3px 3px #80808045;
+    min-height: 400px;
+
+}
+.email-hitory-details-content {
+    margin-left: 40px;
+    overflow: hidden;
+}
+
+.email-hitory-details .email-info-section {
+    margin-top: 10px
+}
+.email-hitory-details .email-info-title {
+    color: gray;
+}
+.email-hitory-details .email-hitory-section {
+    margin-top: 30px;
+}
+
+.email-hitory-details .section-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+.email-hitory-details .icon-section {
+    position: absolute;
+    right: 10px;
+    font-size: 16px;
+    top: 10px;
+    z-index: 999;
+}
+.email-hitory-details .expand-icon {
+    margin-right: 5px;
+} 

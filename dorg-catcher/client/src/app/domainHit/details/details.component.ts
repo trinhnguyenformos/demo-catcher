@@ -11,7 +11,9 @@ export class DetailsComponent implements OnInit {
   @Output() closeDetails = new EventEmitter();
   @Input() id: string;
   grid: any;
-  constructor() { }
+  constructor() { };
+  isShowSubDetails: boolean;
+  subDetailId: number;
 
   ngOnInit() {
     this.grid = {};
@@ -61,5 +63,14 @@ export class DetailsComponent implements OnInit {
 
   closingPanelDetails() {
     this.closeDetails.emit();
+  }
+  
+  showSubDetails(params: any) {
+    this.subDetailId = 1;
+    this.isShowSubDetails = true;
+  }
+  
+  closeDomainHitSubDetail() {
+      this.isShowSubDetails = false;
   }
 }

@@ -31,7 +31,8 @@ import {
   faUserCog,
   faUserAlt,
   faLock,
-  faTimesCircle
+  faTimesCircle,
+  faArrowsAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { ManageDomainComponent } from './manage-domain/manage-domain.component';
 import { DomainHitsComponent } from './domain-hits/domain-hits.component';
@@ -47,9 +48,11 @@ import { CatcherEmailHistoryComponent } from './catcher-email-history/catcher-em
 import { IpScanTabComponent } from './catcher-email-history/partial/catcher-email-history-detail/ip-scan-tab/ip-scan-tab.component';
 import { EmailContentTabComponent } from './catcher-email-history/partial/catcher-email-history-detail/email-content-tab/email-content-tab.component';
 import { DetailsTabComponent } from './catcher-email-history/partial/catcher-email-history-detail/details-tab/details-tab.component';
+import { EmailHitoryDetailsComponent } from './domainHit/partial/email-hitory-details/email-hitory-details.component';
+
 
 // tslint:disable-next-line:max-line-length
-library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl, faTag, faPenAlt, faHistory, faEdit, faUserCog, faUserAlt, faLock, faTimesCircle);
+library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl, faTag, faPenAlt, faHistory, faEdit, faUserCog, faUserAlt, faLock, faTimesCircle, faArrowsAlt);
 
 @NgModule({
   declarations: [
@@ -69,7 +72,8 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     DetailsComponent,
     DetailsTabComponent,
     EmailContentTabComponent,
-    IpScanTabComponent
+    IpScanTabComponent,
+    EmailHitoryDetailsComponent
   ],
   imports: [
     BrowserModule,

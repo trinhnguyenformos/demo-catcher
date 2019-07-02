@@ -1,36 +1,40 @@
 <div class="details">
-  <div class="row action">
-    <div class="col-md-6">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Email History</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Download Job</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Usage Track</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">IP Addresses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Tags</a>
-        </li>
-      </ul>
-      <div class="form-group">
-        <input class="form-control" type="text" placeholder="Search by sender or IP Addresses" />
-        <input class="form-control" type="date" placeholder="From Date" />
-        <input class="form-control" type="date" placeholder="To Date" />
-      </div>
+    <div class="domain-hit-details-containner">
+        <div class="row action">
+            <mat-tab-group class="domain-hit-details-wrapper">
+                <mat-tab label="Email History">
+                    <as-split useTransition="true" unit="percent" direction="horizontally">
+                        <as-split-area size="60" order="1">
+                            <ag-grid-angular class="ag-theme-balham grid-email-details" rowSelection="multiple" [gridOptions]="grid.gridOptions"
+                                (gridReady)="onGridReady($event)"
+                                (rowClicked)="showSubDetails($event)"
+                                >
+                            </ag-grid-angular>
+                        </as-split-area>
+                        <as-split-area size="40" minSize="30" order="2" *ngIf="isShowSubDetails">
+                            <email-history-details id="subDetailId" (closeDetails)="closeDomainHitSubDetail($event)"></email-history-details>
+                        </as-split-area>
+                    </as-split>
+                </mat-tab>
+                <mat-tab label="Download Job">
+                    <div>Download Job</div>
+                </mat-tab>
+                <mat-tab label="Usage Track">
+                    <div>Usage Track</div>
+                </mat-tab>
+                <mat-tab label="IP Addresses">
+                    <div>IP Addresses</div>
+                </mat-tab>
+                <mat-tab label="Tags">
+                    <div>Tags</div>
+                </mat-tab>
+            </mat-tab-group>
+        
+            <div class="icon-group" *ngIf="!isShowSubDetails">
+                <fa-icon class="close-icon" [icon]="['fas','times-circle']" (click)="closingPanelDetails()"></fa-icon>
+                <fa-icon class="expand-icon" [icon]="['fas','arrows-alt']"></fa-icon>
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-        <fa-icon class="close-icon" [icon]="['fas','times-circle']" (click)="closingPanelDetails()"></fa-icon>
-    </div>
-  </div>
-  <div>
-    <ag-grid-angular class="ag-theme-balham" rowSelection="multiple" [gridOptions]="grid.gridOptions"
-      (gridReady)="onGridReady($event)" [rowData]="grid.data">
-    </ag-grid-angular>
-  </div>
 </div>
+  

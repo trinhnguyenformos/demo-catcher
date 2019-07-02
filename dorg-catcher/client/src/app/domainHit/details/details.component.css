@@ -8,6 +8,7 @@
   padding-bottom: 3px;
 }
 
+.expand-icon,
 .close-icon {
   float: right;
   margin-right: 10px;
@@ -15,4 +16,25 @@
 
 .details {
   height: cal(100% + 32px);
+}
+
+.details .domain-hit-details-containner {
+    position: relative;
+}
+
+.details .domain-hit-details-wrapper {
+    width: 100%;
+    margin: 0 20px 0 20px;
+}
+.details .icon-group {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+}
+.details .domain-hit-sub-hide {
+    z-index: 200;
+}
+.details .grid-email-details {
+    z-index: 220;
 }

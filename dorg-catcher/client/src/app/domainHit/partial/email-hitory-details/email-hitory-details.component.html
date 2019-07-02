@@ -1,0 +1,84 @@
+
+<div class="email-hitory-details">
+    <mat-tab-group>
+        <mat-tab label="Details">
+            <div class="email-hitory-details-content">
+                <div class="email-hitory-section" >
+                    <span class="section-title">Email Information</span>
+                     <div>
+                        <div class="row email-info-section">
+                            <div class="col-md-3 email-info-title">Received</div>
+                            <div class="col-md-4">{{emailHistoryTemp.recieved}}</div>
+                        </div>
+                         <div class="row email-info-section">
+                            <div class="col-md-3 email-info-title">Plant email</div>
+                            <div class="col-md-4">{{emailHistoryTemp.plantEmail}}</div>
+                        </div>
+                         <div class="row email-info-section">
+                            <div class="col-md-3 email-info-title">Sender domain</div>
+                            <div class="col-md-4">{{emailHistoryTemp.senderDomain}}</div>
+                        </div>
+                         <div class="row email-info-section">
+                            <div class="col-md-3 email-info-title">Platform</div>
+                            <div class="col-md-4">{{emailHistoryTemp.platform}}</div>
+                        </div>
+                         <div class="row email-info-section">
+                            <div class="col-md-3 email-info-title">Source IPs</div>
+                            <div class="col-md-4">{{emailHistoryTemp.sourceIPs}}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="email-hitory-section">
+                    <span class="section-title">User Matching</span>
+                     <div>
+                        <div class="row email-info-section">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-4 section-title">Sender</div>
+                            <div class="col-md-4 section-title">Download User</div>
+                        </div>
+                         <div class="row email-info-section">
+                            <div class="col-md-3 email-info-title">User ID</div>
+                            <div class="col-md-4">{{senderTemp.userID}}</div>
+                            <div class="col-md-4">{{downloadUserTemp.userID}}</div>
+                        </div>
+                         <div class="row email-info-section">
+                            <div class="col-md-3 email-info-title">Email/User</div>
+                            <div class="col-md-4">{{senderTemp.user}}</div>
+                            <div class="col-md-4">{{downloadUserTemp.user}}</div>
+                        </div>
+                         <div class="row email-info-section">
+                            <div class="col-md-3 email-info-title">Name</div>
+                            <div class="col-md-4 email-info-title">{{senderTemp.name}}</div>
+                            <div class="col-md-4">{{downloadUserTemp.name}}</div>
+                        </div>
+                         <div class="row email-info-section">
+                            <div class="col-md-3 email-info-title">User status</div>
+                            <div class="col-md-4">{{senderTemp.userStatus}}</div>
+                            <div class="col-md-4">{{downloadUserTemp.userStatus}}</div>
+                        </div>
+                        <div class="row email-info-section">
+                            <div class="col-md-3 email-info-title">Active From</div>
+                            <div class="col-md-4">{{senderTemp.activeFrom}}</div>
+                            <div class="col-md-4">{{downloadUserTemp.activeFrom}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Email Content">
+            <div class="email-hitory-details-content">
+                Email Content
+            </div>
+        </mat-tab>
+        <mat-tab label="IP Scan">
+            <div class="email-hitory-details-content">
+                Email Content
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+    <div class="icon-section">
+        <fa-icon class="expand-icon" [icon]="['fas','arrows-alt']"></fa-icon>
+        <fa-icon class="close-icon" [icon]="['fas','times-circle']" (click)="closingEmailHistoryDetails()"></fa-icon>
+    </div>
+</div>

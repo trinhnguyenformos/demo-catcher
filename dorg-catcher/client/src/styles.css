@@ -18,6 +18,24 @@
   background-color: #dee8f8;
 }
 
+.split-horizontally-detail {
+    overflow-y: unset !important;
+    overflow-x: unset !important;
+}
+
+.ag-paging-panel.ag-unselectable .ag-paging-row-summary-panel {
+    position: absolute;
+    left: 0;
+}
+
+.ag-paging-panel.ag-unselectable .ag-paging-page-summary-panel {
+    position: absolute;
+    left: 90px;
+}
+.ag-floating-filter-body .ag-input-text-wrapper {
+    border: solid 1px gray;
+}
+
 .nav {
     zoom: 1;
 }
