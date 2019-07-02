@@ -42,7 +42,7 @@ export class CatcherEmailHistoryComponent implements OnInit {
 
   getDomainHitHeader() {
     this.emailHistories.columns = [
-      { field: 'type', headerName: '', cellRenderer: "emailHistoryTypeRenderer", filter: false, width: 80 },
+      { field: 'type', headerName: '', cellRenderer: 'emailHistoryTypeRenderer', filter: false, width: 80 },
       { field: 'companyName', headerName: 'Company Name', sortable: true, filter: 'agTextColumnFilter' },
       { field: 'senderName', headerName: 'Sender Name', sortable: true, filter: 'agTextColumnFilter' },
       { field: 'userId', headerName: 'User ID', sortable: true, filter: 'agNumberColumnFilter' },
@@ -52,7 +52,7 @@ export class CatcherEmailHistoryComponent implements OnInit {
       { field: 'platformUser', headerName: 'Client Status', sortable: true, filter: 'agTextColumnFilter'  },
       { field: 'grade', headerName: 'Grade', sortable: true, filter: true },
     ];
-    
+
     this.emailHistories.gridOptions = {
       pagination: true,
       rowModelType: 'infinite',

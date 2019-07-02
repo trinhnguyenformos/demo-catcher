@@ -1,10 +1,7 @@
 package dorg.catcher
 
-
-import grails.rest.*
-import grails.converters.*
-import static org.springframework.http.HttpStatus.*
-import static org.springframework.http.HttpMethod.*
+import grails.converters.JSON
+import org.springframework.web.bind.annotation.PathVariable
 
 class CatcherController {
     static responseFormats = ['json', 'xml']
@@ -18,6 +15,18 @@ class CatcherController {
     def getEmailSources() {
         if (request.method == "POST") {
             render EmailSource.findAll() as JSON
+        }
+    }
+
+    def getCatcherEmailHistories() {
+        if (request.method == "POST") {
+            render CatcherEmailHistory.findAll() as JSON
+        }
+    }
+
+    def findById( @PathVariable long id) {
+        if (request.method == "GET" && id) {
+            render CatcherEmailHistory.load(id) as JSON
         }
     }
 }

@@ -1,14 +1,24 @@
-<div [@.disabled]="true">
-  <mat-tab-group animationDuration="0ms">
-    <mat-tab label="Details">
-      {{entity.id}}
-    </mat-tab>
-    <mat-tab label="Email Content">
-      Email Content
-    </mat-tab>
-    <mat-tab label="IP Scan">
-      IP Scan
-    </mat-tab>
-  </mat-tab-group>
+<div class="catcher-email-history-detail">
+  <nav>
+    <ul>
+      <li><a href="#">Details</a></li>
+      <li><a href="#">Email Content</a></li>
+      <li><a href="#">IP Scan</a></li>
+    </ul>
+  </nav>
+  <div class="sub-content">
+    <div class="header-info">
+        <b>Email Information</b>
+    </div>
+    <div class="tbl">
+      <div class="tbl-row">
+        <div class="tbl-cell">
+          Recieved:
+        </div>
+        <div class="tbl-cell">
+          {{ entity.receivedDate }}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-

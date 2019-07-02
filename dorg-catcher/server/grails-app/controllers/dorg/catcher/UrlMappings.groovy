@@ -43,5 +43,8 @@ class UrlMappings {
         post "/catcher"(controller:"catcher", action:"getDomainHits")
 
         post "/email-sources"(controller:"catcher", action:"getEmailSources")
+
+        post "/catcher-email-history"(controller:"catcher", action:"getCatcherEmailHistories")
+        get "/catcher-email-history/$id"(controller:"catcher", action:"findById")
     }
 }
