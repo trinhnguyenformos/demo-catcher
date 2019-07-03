@@ -1,12 +1,20 @@
 <div class="catcher-email-history-detail">
-  <nav>
-    <ul>
-      <li *ngFor="let key of objectKeys(tabs)"><a [ngClass]="{'active-tab' : key === activeTabKey}" (click)="activeTab(key)">{{ tabs[key] }}</a></li>
-    </ul>
-  </nav>
+  <div class="row">
+    <nav class="col-md-10">
+      <ul>
+        <li *ngFor="let key of objectKeys(tabs)"><a [ngClass]="{'active-tab' : key === activeTabKey}"
+            (click)="activeTab(key)">{{ tabs[key] }}</a></li>
+      </ul>
+    </nav>
+    <div class="group-icon col-md-2">
+      <fa-icon class="close-icon float-right" [icon]="['fas','times-circle']" (click)="closingPanelDetails()"></fa-icon>
+      <fa-icon class="expand-icon float-right" [icon]="['fas','arrows-alt']"></fa-icon>
+    </div>
+  </div>
   <div class="sub-content">
-    <app-details-tab *ngIf="tabs[activeTabKey] === tabs.detailsTab" [data]="entity"></app-details-tab>
-    <app-email-content-tab *ngIf="tabs[activeTabKey] === tabs.emailContentTab" [data]="entity"></app-email-content-tab>
-    <app-ip-scan-tab *ngIf="tabs[activeTabKey] === tabs.ipScanTab" [data]="entity"></app-ip-scan-tab>
+    <app-details-tab *ngIf="tabs[activeTabKey] === tabs.detailsTab" [data]="data.details"></app-details-tab>
+    <app-email-content-tab *ngIf="tabs[activeTabKey] === tabs.emailContentTab" [data]="data.emailContent">
+    </app-email-content-tab>
+    <app-ip-scan-tab *ngIf="tabs[activeTabKey] === tabs.ipScanTab" [data]="data.ipScan"></app-ip-scan-tab>
   </div>
 </div>

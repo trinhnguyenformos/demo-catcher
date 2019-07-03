@@ -1,0 +1,26 @@
+.ip-container {
+  border: 1px solid darkgrey;
+  min-height: 150px;
+}
+
+.ip-container span{
+  margin-left: 10px;
+}
+
+.ip-list {
+  padding-bottom: 20px;
+}
+
+.table-data {
+  min-height: 500px;
+  border: 1px solid darkgrey;
+}
+
+.header-row {
+  margin-top: 20px;
+}
+
+.tbl {
+  margin-left: 30px;
+}
+

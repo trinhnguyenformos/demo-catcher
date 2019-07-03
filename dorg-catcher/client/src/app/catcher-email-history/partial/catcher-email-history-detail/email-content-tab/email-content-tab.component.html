@@ -1,19 +1,28 @@
 <div class="email-content-tab">
-    <section class="parsed-signature">
-      <div class="title-info">
-        Parsed Signature
-      </div>
-      <div class="tbl">
-        <div class="tbl-row" *ngFor="let row of sectionRow.parsedSignature.rows">
-          <div class="row">
-            <div class="tbl-cell col-md-3">
-              {{ row[objectKeys(row)] }}
-            </div>
-            <div class="tbl-cell col">
-              {{ data[objectKeys(row)] }}
-            </div>
+  <section class="ip-data">
+    <div class="preview-container-email">
+      <span class="text-email-preview">Email Preview Here</span>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-primary btn-sm">Preview</button>
+      <button class="btn btn-sm border border-primary">Source</button>
+    </div>
+  </section>
+  <section class="parsed-signature">
+    <div class="title-info">
+      Parsed Signature
+    </div>
+    <div class="tbl">
+      <div class="tbl-row" *ngFor="let row of sectionRow.parsedSignature.rows">
+        <div class="row">
+          <div class="tbl-cell col-md-3">
+            {{ row[objectKeys(row)] }}
+          </div>
+          <div class="tbl-cell col">
+            {{ data[objectKeys(row)] }}
           </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+</div>

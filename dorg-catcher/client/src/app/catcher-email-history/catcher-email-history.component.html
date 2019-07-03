@@ -1,5 +1,5 @@
 <as-split useTransition="true" unit="percent">
-  <as-split-area size="50" order="1" class="center" [visible]="true" minSize="20">
+  <as-split-area size="60" order="1" class="center" [visible]="true" minSize="20">
     <div>
       <div id="content" role="main" class="person-rest-api">
         <div class="domain-hit">
@@ -11,7 +11,7 @@
       </div>
     </div>
   </as-split-area>
-  <as-split-area size="50" minSize="30" order="2" [visible]="isShowDetails">
+  <as-split-area size="40" minSize="30" order="2" [visible]="isShowDetails">
     <app-catcher-email-history-detail [catcherEmailHistoryId]="catcherEmailHistoryId" (closeDetails)="closeDetails($event)"></app-catcher-email-history-detail>
   </as-split-area>
 </as-split>

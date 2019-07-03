@@ -32,7 +32,8 @@ import {
   faUserAlt,
   faLock,
   faTimesCircle,
-  faArrowsAlt
+  faArrowsAlt,
+  faExternalLinkSquareAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { ManageDomainComponent } from './manage-domain/manage-domain.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -51,7 +52,7 @@ import { EmailHitoryDetailsComponent } from './domainHit/partial/email-hitory-de
 
 
 // tslint:disable-next-line:max-line-length
-library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl, faTag, faPenAlt, faHistory, faEdit, faUserCog, faUserAlt, faLock, faTimesCircle, faArrowsAlt);
+library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl, faTag, faPenAlt, faHistory, faEdit, faUserCog, faUserAlt, faLock, faTimesCircle, faArrowsAlt, faExternalLinkSquareAlt);
 
 @NgModule({
   declarations: [

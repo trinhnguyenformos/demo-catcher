@@ -10,7 +10,14 @@
             {{ row[objectKeys(row)] }}
           </div>
           <div class="tbl-cell col">
-            {{ data[objectKeys(row)] }}
+            <span *ngIf="isArray(data.emailInformation[objectKeys(row)])">
+              <span *ngFor="let ip of data.emailInformation[objectKeys(row)]">
+                {{ ip }}<br />
+              </span>
+            </span>
+            <span *ngIf="!isArray(data.emailInformation[objectKeys(row)])">
+              {{ data.emailInformation[objectKeys(row)] }}
+            </span>
           </div>
         </div>
       </div>
@@ -33,10 +40,10 @@
             {{ row[objectKeys(row)] }}
           </div>
           <div class="tbl-cell col-md-3">
-            {{ data[objectKeys(row)] }}
+            {{ data.userMatching.sender[objectKeys(row)] }}
           </div>
           <div class="tbl-cell col">
-            {{ data[objectKeys(row)] }}
+            {{ data.userMatching.downloadUser[objectKeys(row)] }}
           </div>
         </div>
       </div>
@@ -44,28 +51,28 @@
   </section>
 
   <section class="account-matching">
-      <div class="title-info">
-        Account Matching
-      </div>
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-3 title-info">Sender</div>
-        <div class="col title-info">Download User</div>
-      </div>
-      <div class="tbl">
-        <div class="tbl-row" *ngFor="let row of sectionRow.accountMatching.rows">
-          <div class="row">
-            <div class="tbl-cell col-md-3">
-              {{ row[objectKeys(row)] }}
-            </div>
-            <div class="tbl-cell col-md-3">
-              {{ data[objectKeys(row)] }}
-            </div>
-            <div class="tbl-cell col">
-              {{ data[objectKeys(row)] }}
-            </div>
+    <div class="title-info">
+      Account Matching
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3 title-info">Sender</div>
+      <div class="col title-info">Download User</div>
+    </div>
+    <div class="tbl">
+      <div class="tbl-row" *ngFor="let row of sectionRow.accountMatching.rows">
+        <div class="row">
+          <div class="tbl-cell col-md-3">
+            {{ row[objectKeys(row)] }}
+          </div>
+          <div class="tbl-cell col-md-3">
+            {{ data.accountMatching.sender[objectKeys(row)] }}
+          </div>
+          <div class="tbl-cell col">
+            {{ data.accountMatching.downloadUser[objectKeys(row)] }}
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 </div>

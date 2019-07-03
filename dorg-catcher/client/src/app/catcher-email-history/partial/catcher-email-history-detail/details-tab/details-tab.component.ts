@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-details-tab',
@@ -9,12 +10,13 @@ export class DetailsTabComponent implements OnInit {
   @Input() structure: any;
   @Input() data: any;
   objectKeys = Object.keys;
+  isArray = _.isArray;
   sectionRow = {
     emailInformation: {
       rows: [
-        { receivedDate: 'Received' },
+        { received: 'Received' },
         { plantEmail: 'Plant Email' },
-        { sentToDomain: 'Sender Domain' },
+        { senderDomain: 'Sender Domain' },
         { platform: 'Platform' },
         { sourceIps: 'Source Ips' }
       ]
@@ -44,7 +46,6 @@ export class DetailsTabComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

@@ -1,3 +1,4 @@
+import { MODEL } from './catcher-email-history-detail.model';
 import { CatcherEmailHistory } from './../model/CatcherEmailHistory';
 import { CatcherService } from './../../../catcher/catcher.service';
 import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange, EventEmitter, Output } from '@angular/core';
@@ -17,6 +18,7 @@ export class CatcherEmailHistoryDetailComponent implements OnInit, OnChanges {
     emailContentTab: 'Email Content',
     ipScanTab: 'IP Scan'
   };
+  data = MODEL;
 
   entity: CatcherEmailHistory = new CatcherEmailHistory();
 

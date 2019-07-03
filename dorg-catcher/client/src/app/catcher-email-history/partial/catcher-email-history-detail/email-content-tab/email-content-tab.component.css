@@ -1,0 +1,16 @@
+.preview-container-email {
+  height: 314px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid darkgrey;
+}
+
+.text-email-preview {
+  font-size: 20px;
+  color: darkgrey;
+}
+
+.btn-group button {
+  margin: 10px 10px 25px 0px;
+}

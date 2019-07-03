@@ -1,29 +1,54 @@
-<div class="email-content-tab">
-  <section class="ip-scan">
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-2 title-info">Match Found</div>
-      <div class="col-md-2 title-info">Record Found</div>
-      <div class="col-md-2 title-info">Most Recent</div>
-      <div class="col"></div>
+<div class="ip-scan">
+  <section class="ip-list row">
+    <div class="marketo col-md-3">
+      <span class="title-info">Marketo</span>
+      <div class="ip-container">
+        <span class="ip-text">185.196.22.47</span>
+        <br />
+        <span class="ip-text">68.178.239.9</span>
+      </div>
     </div>
-    <div class="tbl">
-      <div class="tbl-row" *ngFor="let row of sectionRow.ipScan.rows">
-        <div class="row">
-          <div class="tbl-cell col-md-2">
-            {{ row[objectKeys(row)] }}
-          </div>
-          <div class="tbl-cell col-md-2">
-            {{ data[objectKeys(row)] }}
-          </div>
-          <div class="tbl-cell col-md-2">
-            {{ data[objectKeys(row)] }}
-          </div>
-          <div class="tbl-cell col-md-2">
-            {{ data[objectKeys(row)] }}
-          </div>
-          <div class="tbl-cell col" *ngIf="row[objectKeys(row)] != row.senderAccount && row[objectKeys(row)] != row.platformUser">
-            <button>Run Scan</button>
+    <div class="source-ips col-md-3">
+      <span class="title-info">Source IPs</span>
+      <div class="ip-container">
+        <span class="ip-text">68.178.213.109</span>
+        <br />
+        <span class="ip-text">209.85.221.68</span>
+        <br />
+        <span class="ip-text">209.85.221.65</span>
+      </div>
+    </div>
+  </section>
+  <section>
+    <span class="title-info">IP Scan:&nbsp;</span><span style="color: darkgrey">68.178.239.9</span>
+    <div class="table-data">
+      <div class="row header-row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2 title-info">Match Found</div>
+        <div class="col-md-2 title-info">Record Found</div>
+        <div class="col-md-2 title-info">Most Recent</div>
+        <div class="col"></div>
+      </div>
+      <div class="tbl">
+        <div class="tbl-row" *ngFor="let row of sectionRow.ipScan.rows">
+          <div class="row">
+            <div class="tbl-cell col-md-2">
+              {{ row[objectKeys(row)] }}
+            </div>
+            <div class="tbl-cell col-md-2">
+              {{ data[objectKeys(row)].matchFound }}
+            </div>
+            <div class="tbl-cell col-md-2">
+              {{ data[objectKeys(row)].recordsFound }}
+            </div>
+            <div class="tbl-cell col-md-2">
+              {{ data[objectKeys(row)].mostRecent }}
+            </div>
+            <div class="tbl-cell col"
+              *ngIf="row[objectKeys(row)] != row.senderAccount && row[objectKeys(row)] != row.platformUser">
+              <button class="btn btn-sm border">Run Scan</button>
+              <fa-icon style="margin-left: 5px;" [icon]="['fas', 'external-link-square-alt']"></fa-icon>
+            </div>
           </div>
         </div>
       </div>
