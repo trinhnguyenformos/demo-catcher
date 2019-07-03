@@ -1,3 +1,32 @@
-<p>
-  ip-scan-tab works!
-</p>
+<div class="email-content-tab">
+  <section class="ip-scan">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-2 title-info">Match Found</div>
+      <div class="col-md-2 title-info">Record Found</div>
+      <div class="col-md-2 title-info">Most Recent</div>
+      <div class="col"></div>
+    </div>
+    <div class="tbl">
+      <div class="tbl-row" *ngFor="let row of sectionRow.ipScan.rows">
+        <div class="row">
+          <div class="tbl-cell col-md-2">
+            {{ row[objectKeys(row)] }}
+          </div>
+          <div class="tbl-cell col-md-2">
+            {{ data[objectKeys(row)] }}
+          </div>
+          <div class="tbl-cell col-md-2">
+            {{ data[objectKeys(row)] }}
+          </div>
+          <div class="tbl-cell col-md-2">
+            {{ data[objectKeys(row)] }}
+          </div>
+          <div class="tbl-cell col" *ngIf="row[objectKeys(row)] != row.senderAccount && row[objectKeys(row)] != row.platformUser">
+            <button>Run Scan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

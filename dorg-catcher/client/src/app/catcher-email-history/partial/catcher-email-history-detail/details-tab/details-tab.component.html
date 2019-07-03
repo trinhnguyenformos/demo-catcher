@@ -1,22 +1,71 @@
 <div class="details-tab">
-  <section *ngFor="let section of structure">
-    <div class="header-info">
-      {{ section.sectionName }}
+  <section class="email-information">
+    <div class="title-info">
+      Email Information
     </div>
     <div class="tbl">
-      <div *ngIf="!!section.headerRow && section.headerRow.length > 0" class="tbl-row">
-        <div *ngFor="let header of section.headerRow" class="tbl-cell">{{ header }}</div>
-      </div>
-      <div *ngFor="let row of section.rows" class="tbl-row">
-        <div *ngFor="let key of objectKeys(row)" class="row">
+      <div class="tbl-row" *ngFor="let row of sectionRow.emailInformation.rows">
+        <div class="row">
           <div class="tbl-cell col-md-3">
-              {{ row[key] }}
+            {{ row[objectKeys(row)] }}
           </div>
-          <div class="tbl-cell">
-              {{ data[key] }}
+          <div class="tbl-cell col">
+            {{ data[objectKeys(row)] }}
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <section class="user-matching">
+    <div class="title-info">
+      User Matching
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3 title-info">Sender</div>
+      <div class="col title-info">Download User</div>
+    </div>
+    <div class="tbl">
+      <div class="tbl-row" *ngFor="let row of sectionRow.userMatching.rows">
+        <div class="row">
+          <div class="tbl-cell col-md-3">
+            {{ row[objectKeys(row)] }}
+          </div>
+          <div class="tbl-cell col-md-3">
+            {{ data[objectKeys(row)] }}
+          </div>
+          <div class="tbl-cell col">
+            {{ data[objectKeys(row)] }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="account-matching">
+      <div class="title-info">
+        Account Matching
+      </div>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3 title-info">Sender</div>
+        <div class="col title-info">Download User</div>
+      </div>
+      <div class="tbl">
+        <div class="tbl-row" *ngFor="let row of sectionRow.accountMatching.rows">
+          <div class="row">
+            <div class="tbl-cell col-md-3">
+              {{ row[objectKeys(row)] }}
+            </div>
+            <div class="tbl-cell col-md-3">
+              {{ data[objectKeys(row)] }}
+            </div>
+            <div class="tbl-cell col">
+              {{ data[objectKeys(row)] }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 </div>

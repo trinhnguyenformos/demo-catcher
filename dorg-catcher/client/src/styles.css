@@ -571,7 +571,7 @@ app-catcher-email-histories {
 }
 
 nav ul {
-  padding: 0;
+  padding: 0px 0px 20px 0px;
   margin: 0;
 }
 
@@ -588,20 +588,19 @@ nav ul li a {
   padding: 0 10px;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active-tab {
   border-bottom: 4px solid #007bff;
   text-decoration: none;
 }
 
-nav ul li a:not([href]):not([tabindex]) {
-  color: #007bff;
-}
-
+nav ul li a:not([href]):not([tabindex]),
 nav ul li a:not([href]):not([tabindex]):hover {
   color: #007bff;
+  text-decoration: none;
 }
 
-.header-info {
+.title-info {
   color: #222020;
   font-family: "Open Sans";
   font-size: 12px;
@@ -624,4 +623,9 @@ nav ul li a:not([href]):not([tabindex]):hover {
   display: table-cell;
   padding-top: 5px;
   padding-bottom: 6px;
+  font-size: 12px;
+}
+
+.tbl .tbl-cell:first-child {
+  color: grey;
 }

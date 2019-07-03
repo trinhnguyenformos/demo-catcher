@@ -1,10 +1,12 @@
 <div class="catcher-email-history-detail">
   <nav>
     <ul>
-      <li *ngFor="let key of objectKeys(tabs)"><a (click)="activeTab(key)">{{ tabs[key] }}</a></li>
+      <li *ngFor="let key of objectKeys(tabs)"><a [ngClass]="{'active-tab' : key === activeTabKey}" (click)="activeTab(key)">{{ tabs[key] }}</a></li>
     </ul>
   </nav>
   <div class="sub-content">
-    <app-details-tab *ngIf="tabs[key] === tabs.detailsTab" [structure]="structure[key]" [data]="entity"></app-details-tab>
+    <app-details-tab *ngIf="tabs[activeTabKey] === tabs.detailsTab" [data]="entity"></app-details-tab>
+    <app-email-content-tab *ngIf="tabs[activeTabKey] === tabs.emailContentTab" [data]="entity"></app-email-content-tab>
+    <app-ip-scan-tab *ngIf="tabs[activeTabKey] === tabs.ipScanTab" [data]="entity"></app-ip-scan-tab>
   </div>
 </div>
