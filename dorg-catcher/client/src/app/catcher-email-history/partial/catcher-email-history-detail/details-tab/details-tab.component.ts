@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-details-tab',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details-tab.component.css']
 })
 export class DetailsTabComponent implements OnInit {
-
+  @Input() structure: any;
+  @Input() data: any;
+  objectKeys = Object.keys;
   constructor() { }
 
   ngOnInit() {

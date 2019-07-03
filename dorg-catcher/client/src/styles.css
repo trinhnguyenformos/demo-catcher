@@ -592,3 +592,36 @@ nav ul li a:hover {
   border-bottom: 4px solid #007bff;
   text-decoration: none;
 }
+
+nav ul li a:not([href]):not([tabindex]) {
+  color: #007bff;
+}
+
+nav ul li a:not([href]):not([tabindex]):hover {
+  color: #007bff;
+}
+
+.header-info {
+  color: #222020;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 17px;
+}
+
+.tbl {
+  display: table;
+  width: 100%;
+}
+
+.tbl .tbl-row {
+  border-radius: 4px;
+  display: table-row;
+  height: 30px;
+}
+
+.tbl .tbl-cell {
+  display: table-cell;
+  padding-top: 5px;
+  padding-bottom: 6px;
+}

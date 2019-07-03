@@ -1,3 +1,4 @@
+import { STRUCTURE } from './structure.mapping';
 import { CatcherEmailHistory } from './../model/CatcherEmailHistory';
 import { CatcherService } from './../../../catcher/catcher.service';
 import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange, EventEmitter, Output } from '@angular/core';
@@ -10,9 +11,17 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange, Event
 export class CatcherEmailHistoryDetailComponent implements OnInit, OnChanges {
   @Input() catcherEmailHistoryId: number;
   @Output() closeDetails = new EventEmitter();
+  objectKeys = Object.keys;
+  key = 'detailsTab';
+  tabs = {
+    detailsTab: 'Details',
+    emailContentTab: 'Email Content',
+    ipScanTab: 'IP Scan'
+  };
+  structure = STRUCTURE;
 
   entity: CatcherEmailHistory = new CatcherEmailHistory();
-  
+
   constructor(private catcherService: CatcherService) {}
 
   ngOnChanges(changes: SimpleChanges) {
@@ -25,10 +34,15 @@ export class CatcherEmailHistoryDetailComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    
+
   }
 
   closingPanelDetails() {
     this.closeDetails.emit();
+  }
+
+  activeTab(key: string) {
+    this.key = key;
+    console.log(this.entity);
   }
 }

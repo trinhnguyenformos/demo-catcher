@@ -1,3 +1,22 @@
-<p>
-  details-tab works!
-</p>
+<div class="details-tab">
+  <section *ngFor="let section of structure">
+    <div class="header-info">
+      {{ section.sectionName }}
+    </div>
+    <div class="tbl">
+      <div *ngIf="!!section.headerRow && section.headerRow.length > 0" class="tbl-row">
+        <div *ngFor="let header of section.headerRow" class="tbl-cell">{{ header }}</div>
+      </div>
+      <div *ngFor="let row of section.rows" class="tbl-row">
+        <div *ngFor="let key of objectKeys(row)" class="row">
+          <div class="tbl-cell col-md-3">
+              {{ row[key] }}
+          </div>
+          <div class="tbl-cell">
+              {{ data[key] }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

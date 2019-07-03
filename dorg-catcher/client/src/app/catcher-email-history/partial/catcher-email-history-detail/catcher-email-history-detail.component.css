@@ -1,29 +1,3 @@
 .catcher-email-history-detail {
   margin-left: 20px;
 }
-
-.catcher-email-history-detail .header-info {
-  color: #222020;
-  font-family: "Open Sans";
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 17px;
-}
-
-.catcher-email-history-detail .tbl {
-  display: table;
-  width: 100%;
-}
-
-.catcher-email-history-detail .tbl .tbl-row {
-  border-radius: 4px;
-  display: table-row;
-  height: 30px;
-}
-
-.catcher-email-history-detail .tbl .tbl-cell {
-  display: table-cell;
-  padding-left: 12px;
-  padding-top: 5px;
-  padding-bottom: 6px;
-}
