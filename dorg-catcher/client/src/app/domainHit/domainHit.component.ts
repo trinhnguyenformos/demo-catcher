@@ -7,6 +7,8 @@ import { GridOptions, IDatasource, IGetRowsParams, GridApi } from 'ag-grid-commu
 import { environment } from '../../environments/environment';
 import { ActionRenderer } from './partial/action-renderer.component';
 
+import { SelectFloatingFilter } from "../ag-grid-custom/select-floating-filter/select-floating-filter.component";
+
 @Component({
   selector: 'app-domainHit',
   templateUrl: './domainHit.component.html',
@@ -17,7 +19,6 @@ export class DomainHitComponent implements OnInit {
   serverUrl: string;
   domainHits: any = [];
   isShowDetails = false;
-
 
   constructor(private catcherService: CatcherService, private router: Router) { }
 
@@ -41,8 +42,20 @@ export class DomainHitComponent implements OnInit {
         { field: 'lastEmailDate', headerName: 'Last Email Date', sortable: true, filter: 'agDateColumnFilter'},
         { field: 'sendCount', headerName: 'Send Count', sortable: true, filter: false},
         { field: 'lastAction', headerName: 'Last Action', sortable: true, filter: false},
-        { field: 'clientStatus', headerName: 'Client Status', sortable: true, filter: 'agTextColumnFilter'},
-        { field: 'grade', headerName: 'Grade', sortable: true, filter: 'agTextColumnFilter'},
+        { field: 'clientStatus', headerName: 'Client Status', sortable: true, filter: "agTextColumnFilter",
+            floatingFilterComponent: 'selectFloatingFilter',
+            floatingFilterComponentParams: {
+                optionValues: this.getClientStatusFilterValue(),
+                suppressFilterButton: true
+            }
+        },
+        { field: 'grade', headerName: 'Grade', sortable: true, filter: 'agTextColumnFilter',
+            floatingFilterComponent: 'selectFloatingFilter',
+            floatingFilterComponentParams: {
+                optionValues: this.getGradeFilterValue(),
+                suppressFilterButton: true
+            }
+         },
         { headerName: "Action", cellRenderer: "actionRenderer", filter: false}
       ];
 
@@ -54,17 +67,20 @@ export class DomainHitComponent implements OnInit {
            columnDefs: columnDefs,
            pagination: true,
            rowModelType: 'infinite',
-           cacheBlockSize: 20,
+           cacheBlockSize: 5,
            paginationPageSize: 5,
            floatingFilter:true
       };
 
       this.domainHits.frameworkComponents = {
-          actionRenderer: ActionRenderer
+          actionRenderer: ActionRenderer,
+          selectFloatingFilter: SelectFloatingFilter
+          
       };
-
       this.domainHits.dataSource = {
           getRows: (params: IGetRowsParams) => {
+        	  console.log("AAAAAAAAAAAAAAA")
+        	  console.log(params)
               this.apiService().subscribe(data => {
                   params.successCallback(data,data.length);
               })
@@ -72,6 +88,19 @@ export class DomainHitComponent implements OnInit {
       }
       return this.domainHits;
    }
+  
+  getClientStatusFilterValue() {
+      return [
+          'Former',
+          'Neither'
+      ];
+  };
+  
+  getGradeFilterValue() {
+      return [
+          'A','B','C','D'
+      ];
+  };
 
   apiService() {
     return this.catcherService.getDomaintHitData();
@@ -82,11 +111,6 @@ export class DomainHitComponent implements OnInit {
     this.domainHits.gridApi.sizeColumnsToFit();
     this.domainHits.gridApi.setDatasource(this.domainHits.dataSource);
     this.domainHits.gridApi.setDomLayout('autoHeight');
-  }
-
-  onFilterChanged(params: any) {
-      alert("onFilterChanged");
-      console.log(params);
   }
 
   showDetails(params: any) {

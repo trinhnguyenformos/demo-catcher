@@ -53,6 +53,7 @@ import { DetailsTabComponent } from './catcher-email-history/partial/catcher-ema
 import { EmailHitoryDetailsComponent } from './domainHit/partial/email-hitory-details/email-hitory-details.component';
 import { EuiExportHistoryModule } from './eui-export-history/eui-export-history.module.';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { SelectFloatingFilter } from "./ag-grid-custom/select-floating-filter/select-floating-filter.component";
 
 
 // tslint:disable-next-line:max-line-length
@@ -76,7 +77,8 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     DetailsTabComponent,
     EmailContentTabComponent,
     IpScanTabComponent,
-    EmailHitoryDetailsComponent
+    EmailHitoryDetailsComponent,
+    SelectFloatingFilter
   ],
   imports: [
     BrowserModule,
@@ -91,7 +93,8 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
     EuiExportHistoryModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AgGridModule.withComponents([SelectFloatingFilter])
   ],
   entryComponents: [
     ActionRenderer,

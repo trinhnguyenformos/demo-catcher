@@ -1,40 +1,49 @@
 <div class="details">
     <div class="domain-hit-details-containner">
-        <div class="row action">
-            <mat-tab-group class="domain-hit-details-wrapper">
-                <mat-tab label="Email History">
-                    <as-split useTransition="true" unit="percent" direction="horizontally">
-                        <as-split-area size="60" order="1">
+    
+        <as-split useTransition="true" unit="percent" direction="horizontally">
+            <as-split-area size="60" order="1">
+            
+                <div class="row action">
+                    <mat-tab-group class="domain-hit-details-wrapper">
+                        <mat-tab label="Email History">
+                            <div class="email-history-search-group">
+                                <input class="search-text" type="text" placeholder="Search by sender or IP Addresses" />
+                                <input class="search-date" type="date" placeholder="yyyy-mm-dd" />
+                                <input class="search-date" type="date" placeholder="yyyy-mm-dd" />
+                            </div>
                             <ag-grid-angular class="ag-theme-balham grid-email-details" rowSelection="multiple" [gridOptions]="grid.gridOptions"
                                 (gridReady)="onGridReady($event)"
                                 (rowClicked)="showSubDetails($event)"
-                                >
-                            </ag-grid-angular>
-                        </as-split-area>
-                        <as-split-area size="40" minSize="30" order="2" *ngIf="isShowSubDetails">
-                            <email-history-details id="subDetailId" (closeDetails)="closeDomainHitSubDetail($event)"></email-history-details>
-                        </as-split-area>
-                    </as-split>
-                </mat-tab>
-                <mat-tab label="Download Job">
-                    <div>Download Job</div>
-                </mat-tab>
-                <mat-tab label="Usage Track">
-                    <div>Usage Track</div>
-                </mat-tab>
-                <mat-tab label="IP Addresses">
-                    <div>IP Addresses</div>
-                </mat-tab>
-                <mat-tab label="Tags">
-                    <div>Tags</div>
-                </mat-tab>
-            </mat-tab-group>
+                            ></ag-grid-angular>
+                        </mat-tab>
+                        <mat-tab label="Download Job">
+                            <div>Download Job</div>
+                        </mat-tab>
+                        <mat-tab label="Usage Track">
+                            <div>Usage Track</div>
+                        </mat-tab>
+                        <mat-tab label="IP Addresses">
+                            <div>IP Addresses</div>
+                        </mat-tab>
+                        <mat-tab label="Tags">
+                            <div>Tags</div>
+                        </mat-tab>
+                    </mat-tab-group>
         
-            <div class="icon-group" *ngIf="!isShowSubDetails">
-                <fa-icon class="close-icon" [icon]="['fas','times-circle']" (click)="closingPanelDetails()"></fa-icon>
-                <fa-icon class="expand-icon" [icon]="['fas','arrows-alt']"></fa-icon>
-            </div>
-        </div>
+                     <div class="icon-group" *ngIf="!isShowSubDetails">
+                        <fa-icon class="close-icon" [icon]="['fas','times-circle']" (click)="closingPanelDetails()"></fa-icon>
+                        <fa-icon class="expand-icon" [icon]="['fas','arrows-alt']"></fa-icon>
+                    </div>
+                </div>
+            </as-split-area>
+            
+            <as-split-area size="40" minSize="30" order="2" *ngIf="isShowSubDetails">
+                <email-history-details id="subDetailId" (closeDetails)="closeDomainHitSubDetail($event)"></email-history-details>
+            </as-split-area>
+            
+        </as-split>
+        
     </div>
 </div>
-  
+ 

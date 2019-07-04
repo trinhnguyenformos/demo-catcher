@@ -3,7 +3,7 @@
     <as-split-area size="40" order="1" class="center" minSize="20">
       <ag-grid-angular class="ag-theme-balham" rowSelection="multiple" [gridOptions]="domainHits.gridOptions"
         (gridReady)="onGridReady($event)" [frameworkComponents]="domainHits.frameworkComponents"
-        (rowClicked)="showDetails($event)" (filterChanged)="onFilterChanged($event)">
+        (rowClicked)="showDetails($event)">
       </ag-grid-angular>
     </as-split-area>
     <as-split-area size="60" minSize="30" order="2" *ngIf="isShowDetails">

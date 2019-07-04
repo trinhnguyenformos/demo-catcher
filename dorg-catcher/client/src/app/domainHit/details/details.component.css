@@ -38,3 +38,18 @@
 .details .grid-email-details {
     z-index: 220;
 }
+
+.details .email-history-search-group {
+    margin: 10px 0 15px 0;
+}
+
+.details .email-history-search-group input {
+    height: 25px;
+}
+
+.details .email-history-search-group .search-date {
+    margin-left: 20px
+}
+.details .email-history-search-group .search-text {
+    width: 30%
+}
