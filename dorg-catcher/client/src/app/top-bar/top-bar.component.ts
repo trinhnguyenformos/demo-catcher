@@ -11,7 +11,8 @@ export class TopBarComponent implements OnInit {
   DOMAIN_HIT_URL = "/domainHit";
   CATCHER_EMAIL_HISTORY_URL = "/catcher-email-history";
   EUI_EXPORT_HISTORY_URL = "/eui-export-history";
-  USAGE_TRACK_URL = "/usage-track"
+  USAGE_TRACK_URL = "/usage-track";
+  MANAGE_DOMAIN_URL = "/manage-domain";
 
   currentUrl: string = "/domainHit";
 

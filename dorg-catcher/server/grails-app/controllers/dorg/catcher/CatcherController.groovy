@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable
 class CatcherController {
     static responseFormats = ['json', 'xml']
     
+	CatcherEmailProcessService catcherEmailProcessService
+	
     def getDomainHits() {
         if (request.method == "POST") {
             render DomainHit.findAll() as JSON
@@ -53,4 +55,9 @@ class CatcherController {
             render UsageTrackDownloadJobDetails.findAll() as JSON
         }
     }
+	
+	def readMail () {
+		def emailSource = new EmailSource(id : 1, mailHost: "imap.secureserver.net", mailPort: "993", accountUsername: "datasecurity@dioicia.com", accountPassword: "Blazers12!")
+		render catcherEmailProcessService.processMailboxByEmailSource(emailSource, false) as JSON
+	}
 }

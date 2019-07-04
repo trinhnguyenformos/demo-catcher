@@ -52,5 +52,7 @@ class UrlMappings {
 
         post "/usage-track"(controller:"catcher", action:"getUsageTrackDownloadJob")
         get "/usage-track/$id"(controller:"catcher", action:"findUsageTrackDownloadJobDetails")
+		
+		get "/read-mail"(controller:"catcher", action:"readMail")
     }
 }
