@@ -46,5 +46,11 @@ class UrlMappings {
 
         post "/catcher-email-history"(controller:"catcher", action:"getCatcherEmailHistories")
         get "/catcher-email-history/$id"(controller:"catcher", action:"findById")
+
+        post "/eui-export-history"(controller:"catcher", action:"getEuiExportHistories")
+        get "/eui-export-history/$id"(controller:"catcher", action:"findEuiExportHistoryById")
+
+        post "/usage-track"(controller:"catcher", action:"getUsageTrackDownloadJob")
+        get "/usage-track/$id"(controller:"catcher", action:"findUsageTrackDownloadJobDetails")
     }
 }

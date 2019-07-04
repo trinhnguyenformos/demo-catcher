@@ -1,0 +1,19 @@
+<div class="usage-track">
+  <as-split useTransition="true" unit="percent" direction="vertical">
+    <as-split-area size="40" order="1" class="center" minSize="20">
+      <div>
+        <div id="content" role="main" class="person-rest-api">
+          <div class="app-usage-track">
+            <ag-grid-angular class="ag-theme-balham" [rowData]="usageTracks.data" [columnDefs]="usageTracks.columns"
+            rowSelection="single" [frameworkComponents]="usageTracks.frameworkComponents"
+            [gridOptions]="usageTracks.gridOptions" (gridReady)="onGridReady($event)">
+          </ag-grid-angular>
+          </div>
+        </div>
+      </div>
+    </as-split-area>
+    <as-split-area size="60" minSize="30" order="2" *ngIf="!!isShowDetails">
+      <app-usage-track-details [data]="usageTrackDetails"></app-usage-track-details>
+    </as-split-area>
+  </as-split>
+</div>

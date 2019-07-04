@@ -1,5 +1,7 @@
 package dorg.catcher
 
+import grails.converters.JSON
+
 class BootStrap {
 
     def init = { servletContext ->
@@ -28,6 +30,41 @@ class BootStrap {
         new dorg.catcher.CatcherEmailHistory(  type: "I",  companyName: "Advent Global",  senderName: "Don Nelsen",  userId: 258118,  receivedDate:"05/27/19 10:30 AM",  sentToDomain: "diocia.com",  fromAddress: "don.nelsen@advent-global.com",  platformUser: "don.nelsen@advent-global.com",  grade: "A").save()
         new dorg.catcher.CatcherEmailHistory( type: "N", companyName: "Advantage Business Media", senderName: "Erica Summer", userId: 20655, receivedDate:"03/21/19 11:30 PM", sentToDomain: "caltora.net", fromAddress: "summer@advglobal.net", platformUser: "summer@advglobal.net", grade: "F").save()
         new dorg.catcher.CatcherEmailHistory( type: "N", companyName: "Advantage Business Media", senderName: "Erica Summer", userId: 20655, receivedDate:"06/29/19 4:15 AM", sentToDomain: "diocia.com", fromAddress: "summer@advglobal.net", platformUser: "summer@advglobal.net", grade: "F").save()
+
+        new dorg.catcher.EuiExportHistory(  type: "A",  platformUser: "chris.hackett@advantech.com",  userId: 33231,  exportDate: "1/6/2019 4:15",  count: 87,  plantEmailSM: "robert.wise@webnet.-it.com",  plantEmailMed: null,  plantEmailLG: null,  clientIP: "172.20.19.178",  companyName: "Advantage Systems").save()
+        new dorg.catcher.EuiExportHistory(  type: "A",  platformUser: "chris.hackett@advantech.com",  userId: 33231,  exportDate: "3/15/2019 8:01",  count: 50,  plantEmailSM: "gary.parson@webnet.-it.com",  plantEmailMed: null,  plantEmailLG: null,  clientIP: "50.232.118.138",  companyName: "Advantage Systems").save()
+        new dorg.catcher.EuiExportHistory(  type: "A",  platformUser: "planner@advantage-tech.com",  userId: 108625,  exportDate: "2/25/2019 18:45",  count: 17913,  plantEmailSM: "gerald.smithe@diocia.com",  plantEmailMed: "matt.wise@diocia.com",  plantEmailLG: "nathan.wise@diocia.com",  clientIP: "50.232.118.139",  companyName: "Advantage Systems").save()
+        new dorg.catcher.EuiExportHistory(  type: "A",  platformUser: "jeff.cochran@advantech.com",  userId: 108625,  exportDate: "2/6/2019 10:30",  count: 15704,  plantEmailSM: "grant.fitt@diocia.com",  plantEmailMed: "pat.wentz@diocia.com",  plantEmailLG: "joe.wise@diocia.com",  clientIP: "172.20.19.178",  companyName: "Advantage Systems").save()
+        new dorg.catcher.EuiExportHistory(  type: "A",  platformUser: "jeff.cochran@advantech.com",  userId: 108625,  exportDate: "5/9/2019 23:30",  count: 7442,  plantEmailSM: "harry.wond@caltora.net",  plantEmailMed: "paul.allen@caltora.net",  plantEmailLG: null,  clientIP: "172.20.19.178",  companyName: "Advantage Systems").save()
+        new dorg.catcher.EuiExportHistory(  type: "A",  platformUser: "jplanner@advantage-tech.com",  userId: 38681,  exportDate: "7/4/2019 4:15",  count: 15849,  plantEmailSM: "charles.barton@diocia.com",  plantEmailMed: "phil.bennet@diocia.com",  plantEmailLG: "noah.wise@diocia.com",  clientIP: "24.55.20.131",  companyName: "Advantage Systems").save()
+        new dorg.catcher.EuiExportHistory(  type: "A",  platformUser: "jplanner@advantech.com",  userId: 38681,  exportDate: "3/18/2019 8:01",  count: 3016,  plantEmailSM: "p.wise@caltora.net",  plantEmailMed: "andrew.mccoy@caltora.net",  plantEmailLG: null,  clientIP: "24.55.20.131",  companyName: "Advantage Systems").save()
+        new dorg.catcher.EuiExportHistory(  type: "I",  platformUser: "raj.chappidi@advglobal.net",  userId: 18217,  exportDate: "3/10/2019 23:30",  count: 16043,  plantEmailSM: "ch.farmer@webnet.-it.com",  plantEmailMed: "brady@webnet.-it.com",  plantEmailLG: "quincy.loft@webnet.-it.com",  clientIP: "172.20.19.178",  companyName: "Advent Global").save()
+        new dorg.catcher.EuiExportHistory(  type: "I",  platformUser: "raj.chappidi@advglobal.net",  userId: 18217,  exportDate: "4/13/2019 18:05",  count: 4213,  plantEmailSM: "chester.grant@diocia.com",  plantEmailMed: "lori.emmit@diocia.com",  plantEmailLG: "paul.reed@diocia.com",  clientIP: "50.254.65.66",  companyName: "Advent Global").save()
+        new dorg.catcher.EuiExportHistory(  type: "I",  platformUser: "raj.chappidi@advglobal.net",  userId: 18217,  exportDate: "12/16/2018 23:30",  count: 1650,  plantEmailSM: "cheryl.parson@caltora.net",  plantEmailMed: "linda.tasker@caltora.net",  plantEmailLG: "peter.wise@caltora.net",  clientIP: "50.254.65.66",  companyName: "Advent Global").save()
+        new dorg.catcher.EuiExportHistory(  type: "I",  platformUser: "don.nelsen@advent-global.com",  userId: 258118,  exportDate: "5/27/2019 10:30",  count: 32240,  plantEmailSM: "jenn.amber@diocia.com",  plantEmailMed: "mark.ward@diocia.com",  plantEmailLG: "ruth.buzzy@diocia.com",  clientIP: "172.20.19.178",  companyName: "Smith Tech, Inc").save()
+        new dorg.catcher.EuiExportHistory(  type: "I",  platformUser: "don.nelsen@advent-global.com",  userId: 258118,  exportDate: "1/6/2019 8:01",  count: 57616,  plantEmailSM: "joey.tribb@webnet.-it.com",  plantEmailMed: "m.wie@webnet.-it.com",  plantEmailLG: "sasha.young@webnet.-it.com",  clientIP: "50.232.118.143",  companyName: "Smith Tech, Inc").save()
+        new dorg.catcher.EuiExportHistory(  type: "N",  platformUser: "summer@advglobal.net",  userId: 20655,  exportDate: "3/21/2019 23:30",  count: 7689,  plantEmailSM: "ross.wise@caltora.net",  plantEmailMed: "rob.zombie@caltora.net",  plantEmailLG: "scott.brand@caltora.net",  clientIP: "203.35.113.3",  companyName: "Advent Global").save()
+        new dorg.catcher.EuiExportHistory(  type: "N",  platformUser: "summer@advglobal.net",  userId: 20655,  exportDate: "6/29/2019 4:15",  count: 1210,  plantEmailSM: "fred.garrison@diocia.com",  plantEmailMed: "jess.jones@diocia.com",  plantEmailLG: null,  clientIP: "50.254.65.66",  companyName: "Advent Global").save()
+
+
+        new UsageTrackDownloadJob( platformUser: "marylynn.benners@experis.com", userId: 33231, eventDate: "1/6/2019", updateTime: "6/11/2019 23:15", clientIp: "172.20.19.178", companyName: "Experis", eventCount: 87 ).save()
+        new UsageTrackDownloadJob( platformUser: "jennifer.huston@experis.com", userId: 33231, eventDate: "2/24/2019", updateTime: "6/11/2019 23:10", clientIp: "172.20.19.178", companyName: "Experis", eventCount: 87 ).save()
+        new UsageTrackDownloadJob( platformUser: "chris.hackett@advantech.com", userId: 33231, eventDate: "3/15/2019", updateTime: "6/11/2019 22:01", clientIp: "50.232.118.138", companyName: "Advent Systems, Inc", eventCount: 10 ).save()
+        new UsageTrackDownloadJob( platformUser: "jplanner@advantage-tech.com", userId: 108625, eventDate: "2/25/2019", updateTime: "6/11/2019 18:45", clientIp: "50.232.118.139", companyName: "Advantage Technical Systems", eventCount: 13 ).save()
+        new UsageTrackDownloadJob( platformUser: "ann_mahoney@ibi.com", userId: 108625, eventDate: "2/6/2019", updateTime: "6/11/2019 11:30", clientIp: "172.20.19.178", companyName: "IBI International", eventCount: 15 ).save()
+        new UsageTrackDownloadJob( platformUser: "jeff.cochran@advantech.com", userId: 108625, eventDate: "5/9/2019", updateTime: "6/11/2019 10:28", clientIp: "172.20.19.178", companyName: "Advent Systems, Inc", eventCount: 42 ).save()
+        new UsageTrackDownloadJob( platformUser: "jplanner@advantage-tech.com", userId: 38681, eventDate: "7/4/2019", updateTime: "6/11/2019 10:21", clientIp: "24.55.20.131", companyName: "Advantage Systems", eventCount: 1 ).save()
+        new UsageTrackDownloadJob( platformUser: "pat@intelliswift.com", userId: 38681, eventDate: "3/18/2019", updateTime: "3/18/2019 8:01", clientIp: "24.55.20.131", companyName: "Intelliswift", eventCount: 3 ).save()
+        new UsageTrackDownloadJob( platformUser: "cari.chui@advantage-tech.com", userId: 4257, eventDate: "10/17/2018", updateTime: "10/17/2018 10:30", clientIp: "98.210.185.21", companyName: "Advent Systems, Inc", eventCount: 55 ).save()
+
+        new UsageTrackDownloadJobDetails( timestamp: "6/11/2019 11:30", ipAddress: "172.20.19.178", action: "Export Actions", entityType: "Intel Report" ).save()
+        new UsageTrackDownloadJobDetails( timestamp: "6/11/2019 11:22", ipAddress: "172.20.19.178", action: "Quick Searches", entityType: "Intel Report" ).save()
+        new UsageTrackDownloadJobDetails( timestamp: "6/11/2019 11:21", ipAddress: "172.20.19.178", action: "Companies Viewed", entityType: "Corporate History" ).save()
+        new UsageTrackDownloadJobDetails( timestamp: "6/11/2019 11:18", ipAddress: "172.20.19.178", action: "Export Actions", entityType: "Person" ).save()
+        new UsageTrackDownloadJobDetails( timestamp: "6/11/2019 11:14", ipAddress: "172.20.19.178", action: "Quick Searches", entityType: "Person" ).save()
+        new UsageTrackDownloadJobDetails( timestamp: "6/11/2019 11:09", ipAddress: "172.20.19.178", action: "Export Actions", entityType: "Company" ).save()
+        new UsageTrackDownloadJobDetails( timestamp: "6/11/2019 10:55", ipAddress: "172.20.19.178", action: "Export Actions", entityType: "Content Consumption" ).save()
+        new UsageTrackDownloadJobDetails( timestamp: "6/11/2019 10:52", ipAddress: "172.20.19.178", action: "Companies Viewed", entityType: "Tier 2 Company" ).save()
     }
     def destroy = {
     }

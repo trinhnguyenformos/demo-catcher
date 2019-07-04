@@ -6,6 +6,7 @@ import {ManageDomainComponent} from "./manage-domain/manage-domain.component";
 import { LoginComponent } from './login/login.component';
 import { CatcherEmailHistoryComponent } from './catcher-email-history/catcher-email-history.component';
 import { EuiExportHistoryComponent } from './eui-export-history/eui-export-history.component';
+import { UsageTrackComponent } from './usage-track/usage-track.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -15,7 +16,7 @@ const routes: Routes = [
   {path: 'manage-domain', component: ManageDomainComponent},
   {path: 'catcher-email-history', component: CatcherEmailHistoryComponent},
   {path: 'eui-export-history', component: EuiExportHistoryComponent},
-  {path: 'usage-track', component: EuiExportHistoryComponent}
+  {path: 'usage-track', component: UsageTrackComponent}
 ];
 
 @NgModule({

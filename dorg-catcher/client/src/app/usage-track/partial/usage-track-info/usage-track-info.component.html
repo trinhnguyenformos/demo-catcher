@@ -1,0 +1,17 @@
+<div class="usage-track-info">
+    <div class="row">
+        <nav class="col-md-10">
+          <ul>
+            <li><a class="active-tab">Details JSON</a></li>
+          </ul>
+        </nav>
+        <div class="group-icon col-md-2">
+          <fa-icon class="close-icon float-right" [icon]="['fas','times-circle']" (click)="closingPanelDetails()"></fa-icon>
+          <fa-icon class="expand-icon float-right" [icon]="['fas','arrows-alt']"></fa-icon>
+        </div>
+      </div>
+  <section>
+    <div class="json-details" [innerHTML]="jsonDetails">
+    </div>
+  </section>
+</div>

@@ -21,7 +21,7 @@ export class CatcherService {
   getCatcherEmailHistoryData(): Observable<any> {
     return this.httpClient.post(environment.serverUrl + 'catcher-email-history', '').pipe(publishReplay(), refCount());
   }
-  
+
   findCatcherEmailHistoryById(id): Observable<HttpResponse<CatcherEmailHistory>> {
     return this.httpClient.get<CatcherEmailHistory>(environment.serverUrl + 'catcher-email-history/' + id, { observe: 'response' });
   }
@@ -33,8 +33,16 @@ export class CatcherService {
   getEuiExportHistoryData(): Observable<any> {
     return this.httpClient.post(environment.serverUrl + 'eui-export-history', '').pipe(publishReplay(), refCount());
   }
-  
+
   findEuiExportHistoryById(id): Observable<HttpResponse<EuiExportHistory>> {
     return this.httpClient.get<EuiExportHistory>(environment.serverUrl + 'eui-export-history/' + id, { observe: 'response' });
+  }
+
+  getUsageTrackDownloadJob(): Observable<any> {
+    return this.httpClient.post(environment.serverUrl + 'usage-track', '').pipe(publishReplay(), refCount());
+  }
+
+  findUsageTrackDownloadJobById(id): Observable<any> {
+    return this.httpClient.get(environment.serverUrl + 'usage-track/' + id, { observe: 'response' });
   }
 }

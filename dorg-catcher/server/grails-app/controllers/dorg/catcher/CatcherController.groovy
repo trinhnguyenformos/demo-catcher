@@ -24,9 +24,33 @@ class CatcherController {
         }
     }
 
-    def findById( @PathVariable long id) {
+    def findCatcherEmailHistoryById( @PathVariable long id) {
         if (request.method == "GET" && id) {
             render CatcherEmailHistory.load(id) as JSON
+        }
+    }
+
+    def getEuiExportHistories() {
+        if (request.method == "POST") {
+            render EuiExportHistory.findAll() as JSON
+        }
+    }
+
+    def findEuiExportHistoryById( @PathVariable long id) {
+        if (request.method == "GET" && id) {
+            render EuiExportHistory.load(id) as JSON
+        }
+    }
+
+    def getUsageTrackDownloadJob() {
+        if (request.method == "POST") {
+            render UsageTrackDownloadJob.findAll() as JSON
+        }
+    }
+
+    def findUsageTrackDownloadJobDetails( @PathVariable long id) {
+        if (request.method == "GET" && id) {
+            render UsageTrackDownloadJobDetails.findAll() as JSON
         }
     }
 }
