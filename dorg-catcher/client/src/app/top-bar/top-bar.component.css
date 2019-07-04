@@ -60,3 +60,90 @@
 .filter {
   margin: 3px;
 }
+
+.date-picker {
+  margin-left: 30px;
+  width: 180px;
+}
+
+.bar-eui-export-history>button {
+  width: 120px;
+  height: 30px;
+  font-size: 12px
+}
+.bar-eui-export-history>.search-ip {
+  width: 300px;
+}
+
+.bar-catcher-email-history>button {
+  width: 120px;
+  height: 30px;
+  font-size: 12px
+}
+
+.bar-catcher-email-history>.search-ip {
+  width: 300px;
+}
+
+.bar-catcher-email-history>.date-picker {
+  display: inline;
+}
+
+.bar-catcher-email-history>.date-picker>.date-input {
+  display: inline-block;
+}
+
+.bar-catcher-email-history>.date-picker>.date-input>input {
+  display: inline;
+  width: 180px;
+  height: 30px;
+}
+
+.bar-catcher-email-history>.date-picker>.date-input>span>fa-icon {
+  margin-left: 5px;
+  padding-top: 2px;
+}
+
+.bar-eui-export-history>.date-picker {
+  display: inline;
+}
+
+.bar-eui-export-history>.date-picker>.date-input {
+  display: inline-block;
+}
+
+.bar-eui-export-history>.date-picker>.date-input>input {
+  display: inline;
+  width: 180px;
+  height: 30px;
+}
+
+.bar-eui-export-history>.date-picker>.date-input>span>fa-icon {
+  margin-left: 5px;
+  padding-top: 2px;
+}
+
+.bar-usage-track>.date-picker {
+  display: inline;
+}
+
+.bar-usage-track>.date-picker>.date-input {
+  display: inline-block;
+}
+
+.bar-usage-track>.date-picker>.date-input>input {
+  display: inline;
+  width: 180px;
+  height: 30px;
+}
+
+.bar-usage-track>.date-picker>.date-input>span>fa-icon {
+  margin-left: 5px;
+  padding-top: 2px;
+}
+
+.bar-usage-track>button {
+  width: 120px;
+  height: 30px;
+  font-size: 12px
+}

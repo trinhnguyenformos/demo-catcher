@@ -1,3 +1,4 @@
+import { EuiExportHistory } from '../eui-export-history/partial/model/eui-export-history.modal';
 import { CatcherEmailHistory } from './../catcher-email-history/partial/model/CatcherEmailHistory';
 import {Injectable} from '@angular/core';
 import {publishReplay, refCount} from 'rxjs/operators';
@@ -9,7 +10,6 @@ import {HttpClient, HttpResponse} from "@angular/common/http";
 export class CatcherService {
 
   _domaintHitData: Observable<any>;
-  _catcherEmailHistoryData: Observable<any>;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -19,8 +19,7 @@ export class CatcherService {
   }
 
   getCatcherEmailHistoryData(): Observable<any> {
-    this._domaintHitData = this.httpClient.post(environment.serverUrl + 'catcher-email-history', '').pipe(publishReplay(), refCount());
-    return this._domaintHitData;
+    return this.httpClient.post(environment.serverUrl + 'catcher-email-history', '').pipe(publishReplay(), refCount());
   }
   
   findCatcherEmailHistoryById(id): Observable<HttpResponse<CatcherEmailHistory>> {
@@ -29,5 +28,13 @@ export class CatcherService {
 
   getEmailSources(): Observable<any> {
     return this.httpClient.post(environment.serverUrl + 'email-sources', '').pipe(publishReplay(), refCount());
+  }
+
+  getEuiExportHistoryData(): Observable<any> {
+    return this.httpClient.post(environment.serverUrl + 'eui-export-history', '').pipe(publishReplay(), refCount());
+  }
+  
+  findEuiExportHistoryById(id): Observable<HttpResponse<EuiExportHistory>> {
+    return this.httpClient.get<EuiExportHistory>(environment.serverUrl + 'eui-export-history/' + id, { observe: 'response' });
   }
 }

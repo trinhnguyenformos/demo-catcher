@@ -1,0 +1,21 @@
+<div class="catcher-email-history-detail">
+  <div class="row">
+    <nav class="col-md-10">
+      <ul>
+        <li *ngFor="let key of objectKeys(tabs)"><a [ngClass]="{'active-tab' : key === activeTabKey}"
+            (click)="activeTab(key)">{{ tabs[key] }}</a></li>
+      </ul>
+    </nav>
+    <div class="group-icon col-md-2">
+      <fa-icon class="close-icon float-right" [icon]="['fas','times-circle']" (click)="closingPanelDetails()"></fa-icon>
+      <fa-icon class="expand-icon float-right" [icon]="['fas','arrows-alt']"></fa-icon>
+    </div>
+  </div>
+  <div class="sub-content">
+    <app-user-info-tab *ngIf="tabs[activeTabKey] === tabs.detailsTab" [data]="entity">
+    </app-user-info-tab>
+    <app-export-details-tab *ngIf="tabs[activeTabKey] === tabs.emailContentTab" [data]="entity">
+    </app-export-details-tab>
+    <app-json-details-tab *ngIf="tabs[activeTabKey] === tabs.ipScanTab" [data]="entity"></app-json-details-tab>
+  </div>
+</div>

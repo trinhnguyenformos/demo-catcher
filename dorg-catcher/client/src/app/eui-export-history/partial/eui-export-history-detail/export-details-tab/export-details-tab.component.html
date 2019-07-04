@@ -1,0 +1,54 @@
+<div class="email-content-tab">
+    <section class="parsed-signature">
+      <div class="title-info">
+        Export Info
+      </div>
+      <div class="tbl">
+        <div class="tbl-row" *ngFor="let row of sectionRow.exportInfo.rows">
+          <div class="row">
+            <div class="tbl-cell col-md-3">
+              {{ row.name }}
+            </div>
+            <div class="tbl-cell col">
+              {{ data[row.field] ? data[row.field] : row.default }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="parsed-signature">
+      <div class="title-info">
+        Field Exported
+      </div>
+      <div class="field-exported">
+        Employee Id<br>
+        Full Name<br>
+        First Name<br>
+        Last name<br>
+        Title<br>
+        Seniority Level<br>
+        Email<br>
+        Direct Phone<br>
+        Cell Phone<br>
+        Reports To<br>
+        Address 1<br>
+        Address 2<br>
+        City<br>
+        State<br>
+        Zip Code<br>
+        Country<br>
+        Twitter Link<br>
+        LinkedIn URL<br>
+      </div>
+    </section>
+
+    <section class="parsed-signature">
+      <div class="title-info">
+        Filter Criteria
+      </div>
+      <div class="filter-criteria">
+        Filter Criteria Here
+      </div>
+    </section>
+  </div>

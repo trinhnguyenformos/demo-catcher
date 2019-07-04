@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  DOMAIN_HIT_URL = "/domainHit";
+  CATCHER_EMAIL_HISTORY_URL = "/catcher-email-history";
+  EUI_EXPORT_HISTORY_URL = "/eui-export-history";
+  USAGE_TRACK_URL = "/usage-track"
+
+  currentUrl: string = "/domainHit";
+
+  constructor(router: Router) {
+    router.events.subscribe((event) => {
+      if(event instanceof NavigationEnd) {
+        this.currentUrl = event.url;
+      }
+    });
+  }
 
   ngOnInit() {
   }

@@ -1,0 +1,34 @@
+.eui-export-history-detail {
+  margin-left: 20px;
+}
+
+.eui-export-history-detail .header-info {
+  color: #222020;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 17px;
+}
+
+.eui-export-history-detail .tbl {
+  display: table;
+  width: 100%;
+}
+
+.eui-export-history-detail .tbl .tbl-row {
+  border-radius: 4px;
+  display: table-row;
+  height: 30px;
+}
+
+.eui-export-history-detail .tbl .tbl-cell {
+  display: table-cell;
+  padding-left: 12px;
+  padding-top: 5px;
+  padding-bottom: 6px;
+}
+
+fa-icon {
+  margin: 0 5px;
+  color: #7f7f80;
+}

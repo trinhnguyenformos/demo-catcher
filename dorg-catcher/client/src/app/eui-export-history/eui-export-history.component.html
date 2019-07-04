@@ -1,0 +1,17 @@
+<as-split useTransition="true" unit="percent">
+  <as-split-area size="50" order="1" class="center" [visible]="true" minSize="20">
+    <div>
+      <div id="content" role="main" class="person-rest-api">
+        <div class="app-eui-export-history">
+          <ag-grid-angular class="ag-theme-balham" [rowData]="euiExportHistories.data" [columnDefs]="euiExportHistories.columns"
+            rowSelection="single" [frameworkComponents]="euiExportHistories.frameworkComponents"
+            [gridOptions]="euiExportHistories.gridOptions" (gridReady)="onGridReady($event)">
+          </ag-grid-angular>
+        </div>
+      </div>
+    </div>
+  </as-split-area>
+  <as-split-area size="50" minSize="30" order="2" *ngIf="isShowDetails">
+    <app-eui-export-history-detail [euiExportHistoryId]="euiExportHistoryId" (closeDetails)="closeDetails($event)"></app-eui-export-history-detail>
+  </as-split-area>
+</as-split>

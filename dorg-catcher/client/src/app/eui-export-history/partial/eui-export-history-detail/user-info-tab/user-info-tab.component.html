@@ -1,0 +1,50 @@
+<div class="email-content-tab">
+  <section class="parsed-signature">
+    <div class="title-info">
+      User Info
+    </div>
+    <div class="tbl">
+      <div class="tbl-row" *ngFor="let row of sectionRow.userInfo.rows">
+        <div class="row">
+          <div class="tbl-cell col-md-3">
+            {{ row.name }}
+          </div>
+          <div class="tbl-cell col">
+            {{ data[row.field] ? data[row.field] : row.default }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="title-info">
+      Account Info
+    </div>
+    <div class="tbl">
+      <div class="tbl-row" *ngFor="let row of sectionRow.accountInfo.rows">
+        <div class="row">
+          <div class="tbl-cell col-md-3">
+            {{ row.name }}
+          </div>
+          <div class="tbl-cell col">
+            {{ data[row.field] ? data[row.field] : row.default }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="title-info">
+      Account Contact Information
+    </div>
+    <div class="tbl">
+      <div class="tbl-row" *ngFor="let row of sectionRow.accountContactInfo.rows">
+        <div class="row">
+          <div class="tbl-cell col-md-3">
+            {{ row.name }}
+          </div>
+          <div class="tbl-cell col" [innerHTML]="data[row.field] ? data[row.field] : row.default">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,42 +1,164 @@
 <div class="top_nav">
   <div class="nav_menu row">
-    <div class="col-md-4">
-      <h6 class="title">Catcher / Domain Hits</h6>
-      <h4 class="sub_title">Domain Hits</h4>
+    <div class="col-md-4" [ngSwitch]="currentUrl">
+      <span *ngSwitchCase="DOMAIN_HIT_URL">
+          <h6 class="title">Catcher / Domain Hits</h6>
+          <h4 class="sub_title">Domain Hits</h4>
+      </span>
+      <span *ngSwitchCase="CATCHER_EMAIL_HISTORY_URL">
+          <h6 class="title">Catcher / Index</h6>
+          <h4 class="sub_title">Catcher Email History</h4>
+      </span>
+      <span *ngSwitchCase="EUI_EXPORT_HISTORY_URL">
+          <h6 class="title">Catcher / EUI Export History</h6>
+          <h4 class="sub_title">Download Job</h4>
+      </span>
+      <span *ngSwitchCase="USAGE_TRACK_URL">
+          <h6 class="title">Catcher / Usage Track</h6>
+          <h4 class="sub_title">Download Job</h4>
+      </span>
+      <span *ngSwitchDefault>
+          <h6 class="title">Catcher</h6>
+      </span>
     </div>
 
-    <div class="col-md-8 functions">
-      <div class="row">
-      <select class="export-option">
-        <option value=""> Mark as</option>
-        <option value="1">Mark as closed</option>
-        <option value="2">Export as CSV</option>
-      </select>
-      <div class="function export-func" (click)="selectMenu(3)" placement="bottom" ngbTooltip="EUI Export History"><a><fa-icon icon="pen-alt" ></fa-icon></a></div>
-      <div class="function" (click)="selectMenu(5)" placement="bottom" ngbTooltip="Manage Account Tag"><a><fa-icon icon="tag" ></fa-icon></a></div>
-      <div class="function" (click)="selectMenu(3)" placement="bottom" ngbTooltip="EUI Export History"><a><fa-icon icon="file-export" ></fa-icon></a></div>
+    <div class="col-md-8 functions" [ngSwitch]="true">
+      <div class="row" *ngSwitchCase="currentUrl === DOMAIN_HIT_URL">
+        <select class="export-option">
+          <option value=""> Mark as</option>
+          <option value="1">Mark as closed</option>
+          <option value="2">Export as CSV</option>
+        </select>
+        <div class="function export-func" (click)="selectMenu(3)" placement="bottom" ngbTooltip="EUI Export History">
+          <a><fa-icon icon="pen-alt"></fa-icon></a>
+        </div>
+        <div class="function" (click)="selectMenu(5)" placement="bottom" ngbTooltip="Manage Account Tag">
+          <a><fa-icon icon="tag"></fa-icon></a>
+        </div>
+        <div class="function" (click)="selectMenu(3)" placement="bottom" ngbTooltip="EUI Export History">
+          <a><fa-icon icon="file-export"></fa-icon></a>
+        </div>
       </div>
-    </div>
+
+      <div class="row" *ngSwitchCase="currentUrl === CATCHER_EMAIL_HISTORY_URL">
+        <div class="function" (click)="selectMenu(5)" placement="bottom" ngbTooltip="Manage Account Tag">
+          <a><fa-icon icon="tag"></fa-icon></a>
+        </div>
+        <div class="function" (click)="selectMenu(3)" placement="bottom" ngbTooltip="EUI Export History">
+          <a><fa-icon icon="file-export"></fa-icon></a>
+        </div>
+      </div>
+      
+      <div class="row" *ngSwitchCase="currentUrl === EUI_EXPORT_HISTORY_URL || currentUrl === USAGE_TRACK_URL">
+        <div class="function" (click)="selectMenu(3)" placement="bottom" ngbTooltip="EUI Export History">
+          <a><fa-icon icon="file-export"></fa-icon></a>
+        </div>
+      </div>
+      
+      <div class="row" *ngSwitchDefault>
+      </div>
+    </div>  
   </div>
-  <div class="nav_button row">
-    <div class="col-md-12">
+  <div class="nav_button row" [ngSwitch]="currentUrl">
+    <div class="col-md-12" *ngSwitchCase="DOMAIN_HIT_URL">
       <button type="button" class="btn btn-primary filter">New</button>
       <button type="button" class="btn btn-light filter">Pending</button>
       <button type="button" class="btn btn-light filter">Action Taken</button>
       <button type="button" class="btn btn-light filter">Closed</button>
-
+  
       <input type="text" class="search-ip filter" placeholder="Search by IP Address">
       <select class="filter">
         <option value=""> Filter by platform</option>
         <option value="1">DO</option>
         <option value="2">ZI</option>
       </select>
-
+  
       <select class="filter">
         <option value=""> Filter by Catcher Domain</option>
         <option value="1">Domain 1</option>
         <option value="2">Domain 2</option>
       </select>
     </div>
+  
+    <div class="col-md-12 bar-catcher-email-history" *ngSwitchCase="CATCHER_EMAIL_HISTORY_URL">
+      <button type="button" class="" class="btn btn-primary filter">DO</button>
+      <button type="button" class="btn btn-light filter">ZI</button>
+
+      <input type="text" class="search-ip filter" placeholder="Search by Company or IP Address">
+
+      <div class="date-picker">
+        <div class="date-input" style="width: 200px">
+          <input class="form-control" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="fromDate" placeholder="From Date">
+          <span class="trigger" [owlDateTimeTrigger]="dt1">
+            <fa-icon class="expand-icon float-right" [icon]="['fas','calendar-alt']"></fa-icon>
+          </span>
+        </div>
+        <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+      </div>
+      
+      <div class="date-picker">
+        <div class="date-input">
+          <input class="form-control" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="toDate" placeholder="To Date">
+          <span class="trigger" [owlDateTimeTrigger]="dt2">
+              <fa-icon class="expand-icon float-right" [icon]="['fas','calendar-alt']"></fa-icon>
+          </span>
+        </div>
+        <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+      </div>
+    </div>
+  
+    <div class="col-md-12 bar-eui-export-history" *ngSwitchCase="EUI_EXPORT_HISTORY_URL">
+      <button type="button" class="" class="btn btn-primary filter">DO</button>
+      <button type="button" class="btn btn-light filter">ZI</button>
+
+      <input type="text" class="search-ip filter" placeholder="Search by Company or IP Address">
+
+      <div class="date-picker">
+        <div class="date-input" style="width: 200px">
+          <input class="form-control" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="fromDate" placeholder="From Date">
+          <span class="trigger" [owlDateTimeTrigger]="dt1">
+            <fa-icon class="expand-icon float-right" [icon]="['fas','calendar-alt']"></fa-icon>
+          </span>
+        </div>
+        <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+      </div>
+      
+      <div class="date-picker">
+        <div class="date-input">
+          <input class="form-control" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="toDate" placeholder="To Date">
+          <span class="trigger" [owlDateTimeTrigger]="dt2">
+            <fa-icon class="expand-icon float-right" [icon]="['fas','calendar-alt']"></fa-icon>
+          </span>
+        </div>
+        <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+      </div>
+    </div>
+
+    <div class="col-md-12 bar-usage-track" *ngSwitchCase="USAGE_TRACK_URL">
+      <button type="button" class="" class="btn btn-primary filter">DO</button>
+      <button type="button" class="btn btn-light filter">ZI</button>
+
+      <div class="date-picker">
+        <div class="date-input" style="width: 200px">
+          <input class="form-control" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="fromDate" placeholder="From Date">
+          <span class="trigger" [owlDateTimeTrigger]="dt1">
+            <fa-icon class="expand-icon float-right" [icon]="['fas','calendar-alt']"></fa-icon>
+          </span>
+        </div>
+        <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+      </div>
+      
+      <div class="date-picker">
+        <div class="date-input">
+          <input class="form-control" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="toDate" placeholder="To Date">
+          <span class="trigger" [owlDateTimeTrigger]="dt2">
+            <fa-icon class="expand-icon float-right" [icon]="['fas','calendar-alt']"></fa-icon>
+          </span>
+        </div>
+        <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+      </div>
+    </div>
+  
+    <div class="col-md-12" *ngSwitchDefault></div>
   </div>
 </div>

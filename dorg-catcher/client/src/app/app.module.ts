@@ -33,7 +33,9 @@ import {
   faLock,
   faTimesCircle,
   faArrowsAlt,
-  faExternalLinkSquareAlt
+  faExternalLinkSquareAlt,
+  faCalendarAlt,
+  faCalendar
 } from '@fortawesome/free-solid-svg-icons';
 import { ManageDomainComponent } from './manage-domain/manage-domain.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -49,10 +51,12 @@ import { IpScanTabComponent } from './catcher-email-history/partial/catcher-emai
 import { EmailContentTabComponent } from './catcher-email-history/partial/catcher-email-history-detail/email-content-tab/email-content-tab.component';
 import { DetailsTabComponent } from './catcher-email-history/partial/catcher-email-history-detail/details-tab/details-tab.component';
 import { EmailHitoryDetailsComponent } from './domainHit/partial/email-hitory-details/email-hitory-details.component';
+import { EuiExportHistoryModule } from './eui-export-history/eui-export-history.module.';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 
 // tslint:disable-next-line:max-line-length
-library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl, faTag, faPenAlt, faHistory, faEdit, faUserCog, faUserAlt, faLock, faTimesCircle, faArrowsAlt, faExternalLinkSquareAlt);
+library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faTools, faListUl, faTag, faPenAlt, faHistory, faEdit, faUserCog, faUserAlt, faLock, faTimesCircle, faArrowsAlt, faExternalLinkSquareAlt, faCalendarAlt, faCalendar);
 
 @NgModule({
   declarations: [
@@ -84,6 +88,9 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     AgGridModule,
     MatTabsModule,
     BrowserAnimationsModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
+    EuiExportHistoryModule,
     FontAwesomeModule
   ],
   entryComponents: [

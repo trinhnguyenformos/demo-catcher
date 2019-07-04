@@ -1,0 +1,12 @@
+section {
+    padding-bottom: 25px;
+    padding-left: 10px;
+}
+
+.json-details {
+    width: 90%;
+    height: 250px;
+    overflow: auto;
+    border: 1px solid #7f7f80;
+    font-size: 12px;
+}
