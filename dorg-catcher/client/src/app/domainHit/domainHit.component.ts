@@ -47,14 +47,16 @@ export class DomainHitComponent implements OnInit {
             floatingFilterComponentParams: {
                 optionValues: this.getClientStatusFilterValue(),
                 suppressFilterButton: true
-            }
+            },
+            suppressMenu: true
         },
         { field: 'grade', headerName: 'Grade', sortable: true, filter: 'agTextColumnFilter',
             floatingFilterComponent: 'selectFloatingFilter',
             floatingFilterComponentParams: {
                 optionValues: this.getGradeFilterValue(),
                 suppressFilterButton: true
-            }
+            },
+            suppressMenu: true
          },
         { headerName: "Action", cellRenderer: "actionRenderer", filter: false}
       ];

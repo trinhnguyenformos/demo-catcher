@@ -22,19 +22,19 @@ export class SelectFloatingFilter implements IFloatingFilter, AgFrameworkCompone
     agInit(params: SelectFloatingFilterParams): void {
         this.params = params;
         this.optionValues = this.params.optionValues;
-        this.currentValue = null;
+        this.currentValue = '';
     }
 
     valueChanged() {
-        let valueToUse = (this.currentValue === 0) ? null : this.currentValue;
-        this.params.parentFilterInstance( function(instance) {
-            (<TextFilter>instance).onFloatingFilterChanged('equals', valueToUse);
-        });
+        let valueToUse = (this.currentValue === '') ? null : this.currentValue;
+            this.params.parentFilterInstance( function(instance) {
+                (<TextFilter>instance).onFloatingFilterChanged('equals', valueToUse);
+            });
     }
 
     onParentModelChanged(parentModel: TextFilterModel): void {
         if (!parentModel) {
-            this.currentValue = 0;
+            this.currentValue = '';
         } else {
             this.currentValue = parentModel.filter
         }
