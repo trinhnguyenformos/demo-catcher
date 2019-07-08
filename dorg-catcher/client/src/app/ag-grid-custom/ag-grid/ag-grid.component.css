@@ -1,0 +1,15 @@
+.ag-grid-custom {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+.ag-grid-custom .paging {
+    margin: 10px 0px 10px 0px;
+}
+
+.ag-grid-custom .pagination-page-size {
+    float: right;
+}
+.ag-grid-custom .pagination-page-size select {
+    margin-left: 7px;
+    width: 100px;
+}

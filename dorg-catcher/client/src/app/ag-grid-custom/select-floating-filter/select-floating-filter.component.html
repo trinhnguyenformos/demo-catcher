@@ -1,4 +1,4 @@
-<select class="select-floating-filter" type="range" [(ngModel)]="currentValue" (ngModelChange)="valueChanged()">
+<select class="select-floating-filter" [(ngModel)]="currentValue" (ngModelChange)="valueChanged()">
     <option value=""></option>
     <option *ngFor="let value of optionValues" value="{{value}}">{{value}}</option>
 </select>

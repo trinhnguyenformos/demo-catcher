@@ -1,0 +1,24 @@
+<div class="ag-grid-custom">
+    <ag-grid-angular class="ag-theme-balham" rowSelection="multiple" [gridOptions]="agGridVm.gridOptions"
+        (gridReady)="onGridReady($event)" [frameworkComponents]="agGridVm.frameworkComponents"
+        (rowClicked)="rowClickedEvent($event)">
+    </ag-grid-angular>
+    <div class="row paging">
+       <div class="col-md-9">
+          <div *ngIf="agGridVm.paginationLoaded">
+              <button (click)="paginationGoToPage(0)" [disabled]="agGridVm.pagination.paginationGetCurrentPage() === 0">First</button>
+              <button (click)="paginationPreviousPage()" [disabled]="agGridVm.pagination.paginationGetCurrentPage() === 0">Previous</button>
+              <button *ngFor="let value of agGridVm.pagination.pages" (click)="paginationGoToPage(value)">{{value + 1}}</button>
+              <button (click)="paginationNextPage()" [disabled]="(this.agGridVm.pagination.paginationGetCurrentPage() === this.agGridVm.gridOptions.api.paginationGetTotalPages() - 1)">Next</button>
+          </div>
+       </div>
+       <div class="col-md-3">
+           <div class="pagination-page-size">
+               <span>Rows to Display</span>
+               <select class="" [(ngModel)]="agGridVm.paginationPageSize" (ngModelChange)="changedPageSize()">
+                   <option *ngFor="let value of agGridVm.paginationPageSizes" value="{{value}}">{{value}}</option>
+               </select>
+           </div>
+       </div>
+    </div>
+</div>

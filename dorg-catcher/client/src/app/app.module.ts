@@ -39,7 +39,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { ManageDomainComponent } from './manage-domain/manage-domain.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { ActionRenderer } from './domainHit/partial/action-renderer.component';
+import { ActionRenderer } from './ag-grid-custom/action-render/action-renderer.component';
 import { LoginComponent } from './login/login.component';
 import { DetailsComponent } from './domainHit/details/details.component';
 import { CatcherEmailHistoryDetailComponent } from './catcher-email-history/partial/catcher-email-history-detail/catcher-email-history-detail.component';
@@ -57,6 +57,8 @@ import { SelectFloatingFilter } from "./ag-grid-custom/select-floating-filter/se
 import { UsageTrackDetailsComponent } from './usage-track/partial/usage-track-details/usage-track-details.component';
 import { UsageTrackComponent } from './usage-track/usage-track.component';
 import { UsageTrackInfoComponent } from './usage-track/partial/usage-track-info/usage-track-info.component';
+import { AgGridCustomComponent } from './ag-grid-custom/ag-grid/ag-grid.component';
+import { AgGridCustomService } from "./ag-grid-custom/ag-grid/ag-grid.service";
 
 
 // tslint:disable-next-line:max-line-length
@@ -85,7 +87,8 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     EmailHitoryDetailsComponent,
     UsageTrackComponent,
     UsageTrackDetailsComponent,
-    UsageTrackInfoComponent
+    UsageTrackInfoComponent,
+    AgGridCustomComponent
   ],
   imports: [
     BrowserModule,
@@ -107,7 +110,7 @@ library.add(faCoffee, faTags, faUsersCog, faInbox, faFileExport, faBuilding, faT
     ActionRenderer,
     EmailHistoryTypeRenderer
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, NavService, CatcherService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, NavService, CatcherService, AgGridCustomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
